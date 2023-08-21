@@ -16,15 +16,11 @@
                 <img src="./assets//icons/back.svg" alt="back">
             </a>
         </div>
-        <h1 class="heading">Sign Up</h1>
+        <h1 class="heading">Login</h1>
         <div class="box">
             <p class="box-title">Enter your credentials</p>
-            <form action="" method="post">
+            <form action="./login.php" method="post">
                 <div class="form">
-                    <div class="input">
-                        <label for="email">email</label>
-                        <input type="email" name="email" id="email">
-                    </div>
                     <div class="input">
                         <label for="username">username</label>
                         <input type="text" name="username" id="username">
@@ -38,8 +34,8 @@
             </form>
         </div>
         <div class="option">
-            <p>Already have an account?</p>
-            <a href="./login.php">log in</a>
+            <p>Don't have an account?</p>
+            <a href="./login.php">sign up</a>
         </div>
     </div>
     

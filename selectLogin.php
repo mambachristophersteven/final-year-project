@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="./assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/selectLogi.css">
+    <link rel="stylesheet" href="./styles/selectLog.css">
     <title>Winkies- Select Login</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         </div>
         <div class="bottom">
             <div class="first">
-                <p class="heading">Welcome to winkies</p>
+                <p class="heading" id="heading">Welcome to winkies</p>
                 <p class="section-title">Get straight to ordering your food.</p>
                 <div class="button-div">
                     <a href="#"><button class="button">Order Now</button></a>
