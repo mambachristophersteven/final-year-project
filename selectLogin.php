@@ -33,7 +33,7 @@
             <div class="third">
                 <p class="section-title">Want to join our account holders?</p>
                 <div class="button-div">
-                    <a href="#"><button class="button">Sign Up</button></a>
+                    <a href="./signup.php"><button class="button">Sign Up</button></a>
                 </div>
             </div>
 

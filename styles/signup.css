@@ -1,0 +1,132 @@
+@font-face {
+    font-family: poppinsMedium;
+    src: url(../assets/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: poppinsExtraBold;
+    src: url(../assets/fonts/Poppins-ExtraBold.ttf);
+}
+:root{
+    --main-color: rgba(0, 0, 0, 1);
+    --text-color: rgba(0, 0, 0, 1);
+    --button-text: rgba(255, 255, 255, 1);
+    --box-background: rgba(255, 255, 255, 1);
+}
+
+.container{
+    width: 412px;
+    height: 100vh;
+    background-image: url(../assets/images/background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    border: 2px solid rgb(155, 146, 146);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 10px 20px;
+}
+
+.top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top img:first-child{
+    width: 30%;
+}
+
+.top img:last-child{
+    width: 80%;
+}
+
+.heading{
+    font-family: poppinsBold;
+    font-size: 32px;
+    color: var(--text-color);
+}
+
+.box{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--box-background);
+    gap: 50px;
+    padding: 20px 0px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 4px 1px rgba(0, 0, 0, 0.12), -4px -4px 4px 1px rgba(0, 0, 0, 0.12);
+}
+
+.box-title{
+    font-family: poppinsBold;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.input label{
+    font-family: poppinsBold;
+    font-size: 14px;
+    align-self: flex-start;
+}
+
+.input input{
+    width: 270px;
+    background: rgba(0, 0, 0, 0.12);
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-family: poppinsMedium;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+form input[type="submit"]{
+    width: 335px;
+    height: 70px;
+    background: var(--main-color);
+    color: var(--button-text);
+    font-family: poppinsBold;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.option{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 2px;
+}
+
+.option p{
+    font-family: poppinsMedium;
+    font-size: 14px;
+}
+
+.option a{
+    color: black;
+    font-family: poppinsExtraBold;
+}
