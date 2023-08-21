@@ -18,20 +18,20 @@
         </div>
         <div class="bottom">
             <div class="first">
-                <p>Welcome to winkies</p>
-                <p>Get straight to ordering your food</p>
+                <p class="heading">Welcome to winkies</p>
+                <p class="section-title">Get straight to ordering your food.</p>
                 <div class="button-div">
                     <a href="#"><button class="button">Order Now</button></a>
                 </div>
             </div>
             <div class="second">
-                <p>Have an account with us?</p>
+                <p class="section-title">Have an account with us?</p>
                 <div class="button-div">
-                    <a href="#"><button class="button">Login</button></a>
+                    <a href="./login.php"><button class="button">Login</button></a>
                 </div>
             </div>
             <div class="third">
-                <p>Want to join our account holders?</p>
+                <p class="section-title">Want to join our account holders?</p>
                 <div class="button-div">
                     <a href="#"><button class="button">Sign Up</button></a>
                 </div>
