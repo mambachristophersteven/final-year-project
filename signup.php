@@ -19,7 +19,7 @@
         <h1 class="heading">Sign Up</h1>
         <div class="box">
             <p class="box-title">Enter your credentials</p>
-            <form action="" method="post">
+            <form action="./selectAvatar.php" method="post">
                 <div class="form">
                     <div class="input">
                         <label for="email">email</label>

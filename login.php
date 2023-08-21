@@ -35,7 +35,7 @@
         </div>
         <div class="option">
             <p>Don't have an account?</p>
-            <a href="./login.php">sign up</a>
+            <a href="./signup.php">sign up</a>
         </div>
     </div>
     
