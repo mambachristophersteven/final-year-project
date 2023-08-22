@@ -21,7 +21,7 @@
             <div class="box">
                 <p class="box-title">Choose Your Avatar</p>
                 <div class="imgBox" id="imgBox">
-                    <img src="./assets/avatars/1.svg" alt="avatar" id="1" class="selected">
+                    <img src="./assets/avatars/1.svg" alt="avatar" id="1">
                     <img src="./assets/avatars/2.svg" alt="avatar" id="2">
                     <img src="./assets/avatars/3.svg" alt="avatar" id="3">
                     <img src="./assets/avatars/4.svg" alt="avatar" id="4">
@@ -40,6 +40,20 @@
         </form>
         
     </div>
+
+    <script>
+        let images = document.getElementById('imgBox');
+        //console.log(images.children);
+        images.addEventListener('click', function(e){
+            console.log(e.target.src);
+        })
+        // Array.from(images).forEach(image=>{
+        //     box.addEventListener('click', imgClicked)
+        // })
+        // function imgClicked(e){
+        //     console.log(e.target.src);
+        // }
+    </script>
     
 </body>
 </html>
