@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
         <h1 class="heading">Sign Up</h1>
         <div class="box">
             <p class="box-title" id="boxTitle">Enter your credentials</p>
-            <form action="./selectAvatar.php" method="post">
+            <form action="./selectAvatar.php" method="post" id="form">
                 <div class="form">
                     <div class="input">
                         <label for="email">email</label>
@@ -74,9 +74,7 @@ if(isset($_POST['submit'])){
         </div>
     </div>
 
-    <script>
-
-    </script>
+    <script src="./interactivity/signup.js"></script>
     
 </body>
 </html>
