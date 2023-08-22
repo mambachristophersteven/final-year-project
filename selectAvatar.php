@@ -1,3 +1,15 @@
+<?php
+
+include './connection.php';
+
+$error="Choose your avatar";
+$success="";
+$currentDate = date('Y-m-d'); 
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +31,7 @@
         <h1 class="heading">Sign Up</h1>
         <form action="./selectAvatar.php" method="post">
             <div class="box">
-                <p class="box-title">Choose Your Avatar</p>
+                <p class="box-title"><?php echo $error; ?></p>
                 <div class="imgBox" id="imgBox">
                     <img src="./assets/avatars/1.svg" alt="avatar" id="1" class="avatar">
                     <img src="./assets/avatars/2.svg" alt="avatar" id="2" class="avatar">

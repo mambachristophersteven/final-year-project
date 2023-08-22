@@ -2,9 +2,13 @@
 
 include './connection.php';
 
-$error="";
+$error="Enter your credentials";
 $success="";
 $currentDate = date('Y-m-d'); 
+
+$username = "";
+$password = "";
+$email = "";
 
 
 if(isset($_POST['submit'])){
@@ -13,17 +17,24 @@ if(isset($_POST['submit'])){
     $password = $_POST['password'];
 
     if(empty($email)){
-        $error= "Enter your email";
+        $error= "Enter an email address";
     }
     else{
         if(empty($username)){
-            $error = "Input a username";
+            $error = "Enter a username";
         }
-        else{
-            if(empty($password)){
-                $error = "Enter a password";
-            }
+        if(empty($password)){
+            $error = 'Enter a password';
         }
+    }
+
+    $sqlinsert= "INSERT INTO `users` (username,email,password,date_joined,role) VALUES ('$username','$email','$password','$currentDate','Customer')";
+    $result= mysqli_query($con, $sqlinsert);
+    if($result){
+        header("location: ./signed.php");
+    }
+    else{
+        die("error occurred: ".mysqli_error($con));
     }
 }
 
@@ -49,22 +60,22 @@ if(isset($_POST['submit'])){
         </div>
         <h1 class="heading">Sign Up</h1>
         <div class="box">
-            <p class="box-title" id="boxTitle">Enter your credentials</p>
-            <form action="./selectAvatar.php" method="post" id="form">
+            <p class="box-title" id="boxTitle"><?php echo $error; ?></p>
+            <form action="./signup.php" method="post" id="form">
                 <div class="form">
                     <div class="input">
                         <label for="email">email</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" value="<?php echo $email; ?>">
                     </div>
                     <div class="input">
                         <label for="username">username</label>
-                        <input type="text" name="username" id="username">
+                        <input type="text" name="username" id="username" value="<?php echo $username; ?>">
                     </div>
                     <div class="input">
                         <label for="email">password</label>
                         <input type="password" name="password" id="password">
                     </div>
-                    <input type="submit" value="Next" id="submit">
+                    <input type="submit" value="Next" name="submit" id="submit">
                 </div>
             </form>
         </div>
