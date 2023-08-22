@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="./assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/selectAvatar.css">
+    <link rel="stylesheet" href="./styles/selectAvat.css">
     <title>Winkies- Select Avatar</title>
 </head>
 <body>
@@ -21,18 +21,18 @@
             <div class="box">
                 <p class="box-title">Choose Your Avatar</p>
                 <div class="imgBox" id="imgBox">
-                    <img src="./assets/avatars/1.svg" alt="avatar" id="1">
-                    <img src="./assets/avatars/2.svg" alt="avatar" id="2">
-                    <img src="./assets/avatars/3.svg" alt="avatar" id="3">
-                    <img src="./assets/avatars/4.svg" alt="avatar" id="4">
-                    <img src="./assets/avatars/5.svg" alt="avatar" id="5">
-                    <img src="./assets/avatars/6.svg" alt="avatar" id="6">
-                    <img src="./assets/avatars/7.svg" alt="avatar" id="7">
-                    <img src="./assets/avatars/8.svg" alt="avatar" id="8">
-                    <img src="./assets/avatars/9.svg" alt="avatar" id="9">
-                    <img src="./assets/avatars/10.svg" alt="avatar" id="10">
-                    <img src="./assets/avatars/11.svg" alt="avatar" id="11">
-                    <img src="./assets/avatars/12.svg" alt="avatar" id="12">
+                    <img src="./assets/avatars/1.svg" alt="avatar" id="1" class="avatar">
+                    <img src="./assets/avatars/2.svg" alt="avatar" id="2" class="avatar">
+                    <img src="./assets/avatars/3.svg" alt="avatar" id="3" class="avatar">
+                    <img src="./assets/avatars/4.svg" alt="avatar" id="4" class="avatar">
+                    <img src="./assets/avatars/5.svg" alt="avatar" id="5" class="avatar">
+                    <img src="./assets/avatars/6.svg" alt="avatar" id="6" class="avatar">
+                    <img src="./assets/avatars/7.svg" alt="avatar" id="7" class="avatar">
+                    <img src="./assets/avatars/8.svg" alt="avatar" id="8" class="avatar">
+                    <img src="./assets/avatars/9.svg" alt="avatar" id="9" class="avatar">
+                    <img src="./assets/avatars/10.svg" alt="avatar" id="10" class="avatar">
+                    <img src="./assets/avatars/11.svg" alt="avatar" id="11" class="avatar">
+                    <img src="./assets/avatars/12.svg" alt="avatar" id="12" class="avatar">
                 </div>
 
             </div>
@@ -43,9 +43,22 @@
 
     <script>
         let images = document.getElementById('imgBox');
-        //console.log(images.children);
+        let prevSelected = null;
+        //let avatars = document.querySelectorAll('.avatar');
+        
         images.addEventListener('click', function(e){
-            console.log(e.target.src);
+            if(e.target.nodeName === 'IMG'){
+                e.target.classList.toggle("selected");
+                let name = e.target.id + ".svg";
+                console.log(name);
+
+
+                if(prevSelected !== null){
+                    prevSelected.classList.toggle("selected");
+                }
+
+                prevSelected = e.target;
+            }
         })
         // Array.from(images).forEach(image=>{
         //     box.addEventListener('click', imgClicked)
