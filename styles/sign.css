@@ -16,7 +16,7 @@
 
 .container{
     width: 412px;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../assets/images/background.png);
     background-position: center;
     background-size: cover;
@@ -68,6 +68,21 @@
     font-size: 20px;
     color: var(--text-color);
 }
+
+.error{
+    color: #f73545;
+    font-family: poppinsBold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.success{
+    color: #3cf735;
+    text-align: center;
+    font-family: poppinsBold;
+    font-size: 20px;
+}
+
 
 .form{
     display: flex;
