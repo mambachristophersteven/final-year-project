@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +20,8 @@
         </div>
         <h1 class="heading">Login</h1>
         <div class="box">
-            <p class="box-title">Enter your credentials</p>
-            <form action="./login.php" method="post">
+            <p class="box-title" id="boxTitle">Enter your credentials</p>
+            <form action="./login.php" method="post" id="form">
                 <div class="form">
                     <div class="input">
                         <label for="username">username</label>
@@ -38,6 +40,8 @@
             <a href="./signup.php">sign up</a>
         </div>
     </div>
+
+    <script src="./interactivity/login.js"></script>
     
 </body>
 </html>
