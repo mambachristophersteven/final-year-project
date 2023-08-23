@@ -42,7 +42,8 @@ const checkInputs = function(){
 
 function setErrorFor(input, message){
     boxTitle.innerText = message;
-    boxTitle.classList.add('error')
+    boxTitle.style.textAlign = "center";
+    boxTitle.style.color = "#e74c3c";
     input.style.border = "2px solid #e74c3c";
 }
 

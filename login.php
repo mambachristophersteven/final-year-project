@@ -2,14 +2,51 @@
 
 include './connection.php';
 
-$error="Enter your credentials";
+$error="";
 $success="";
 $currentDate = date('Y-m-d'); 
 
 $username = "";
 $password = "";
 
+if(isset($_POST['submit'])){
+    $username= $_POST['username'];
+    $password= $_POST['password'];
+    if(empty($username)){
+        $error = "Invalid Login Credentials";
+    }
+    else{
+        if(empty($password)){
+            $error = "Invalid login Credentials";
+        }
+        else{
+            $sql= "SELECT * FROM `users` WHERE username='$username' AND password ='$password'";
+            $result= mysqli_query($con,$sql);
+            $nums= mysqli_num_rows($result);
+            if($nums>0){
+                $row= mysqli_fetch_assoc($result);
+                $passwordinDb =$row['password'];
+                $position=$row['role'];               
+                if($position==="Customer"){
+                    session_start();
+                    $_SESSION['username']= $username;
+                    header('location: ./pages/customer/homecustomer.php');
+                }
+                if($position==="Chef"){
+                    session_start();
+                    $_SESSION['username']= $username;
+                    header('location: ./pages/chef/homechef.php');
+                }
+            }          
+            else{
+                $error= "Invalid Login Credentials";
+            }
+        }
+    }
 
+
+    
+}
 
 
 ?>
@@ -34,6 +71,7 @@ $password = "";
         </div>
         <h1 class="heading">Login</h1>
         <div class="box">
+            <p class="error" id="error"><?php echo $error; ?></p>
             <p class="box-title" id="boxTitle">Enter your credentials</p>
             <form action="./login.php" method="post" id="form">
                 <div class="form">
@@ -45,7 +83,7 @@ $password = "";
                         <label for="email">password</label>
                         <input type="password" name="password" id="password"  value="<?php echo $password; ?>">
                     </div>
-                    <input type="submit" value="Next" id="submit">
+                    <input type="submit" value="Next" name="submit" id="submit">
                 </div>
             </form>
         </div>

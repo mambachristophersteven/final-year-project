@@ -51,7 +51,6 @@ const checkInputs = function(){
         boxTitle.innerText = 'All input fields validated!';
         boxTitle.classList.remove('error');
         boxTitle.style.color ='#2ecc71';
-        boxTitle.style.display = "none"
         form.removeEventListener('submit', listener)
     }
 }
