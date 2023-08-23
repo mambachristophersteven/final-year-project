@@ -18,8 +18,16 @@ const checkInputs = function(){
     const usernameValue = username.value.trim();
     const passwordValue = password.value.trim();
 
+    //console.log(passwordValue.length)
+
     
     
+    if(passwordValue.length <= 4){
+        setErrorFor(password, 'Password should be more than 4 characters!');
+    }
+    else{
+        setSuccessFor(password);
+    }
     if(passwordValue === ''){
         setErrorFor(password, 'Enter a password!');
     }
@@ -39,7 +47,7 @@ const checkInputs = function(){
         setSuccessFor(email);
     }
 
-    if(emailValue != '' && usernameValue != '' && passwordValue != ''){
+    if(emailValue != '' && usernameValue != '' && passwordValue != '' && passwordValue.length > 4){
         boxTitle.innerText = 'All input fields validated!';
         boxTitle.classList.remove('error');
         boxTitle.style.color ='#2ecc71'

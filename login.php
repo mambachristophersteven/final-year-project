@@ -1,4 +1,18 @@
+<?php
 
+include './connection.php';
+
+$error="Enter your credentials";
+$success="";
+$currentDate = date('Y-m-d'); 
+
+$username = "";
+$password = "";
+
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +39,11 @@
                 <div class="form">
                     <div class="input">
                         <label for="username">username</label>
-                        <input type="text" name="username" id="username">
+                        <input type="text" name="username" id="username"  value="<?php echo $username; ?>">
                     </div>
                     <div class="input">
                         <label for="email">password</label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password"  value="<?php echo $password; ?>">
                     </div>
                     <input type="submit" value="Next" id="submit">
                 </div>
