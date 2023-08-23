@@ -50,7 +50,8 @@ const checkInputs = function(){
     if(emailValue != '' && usernameValue != '' && passwordValue != '' && passwordValue.length > 4){
         boxTitle.innerText = 'All input fields validated!';
         boxTitle.classList.remove('error');
-        boxTitle.style.color ='#2ecc71'
+        boxTitle.style.color ='#2ecc71';
+        boxTitle.style.display = "none"
         form.removeEventListener('submit', listener)
     }
 }
@@ -58,7 +59,8 @@ const checkInputs = function(){
 
 function setErrorFor(input, message){
     boxTitle.innerText = message;
-    boxTitle.classList.add('error')
+    boxTitle.style.textAlign = "center";
+    boxTitle.style.color = "#e74c3c";
     input.style.border = "2px solid #e74c3c";
 }
 

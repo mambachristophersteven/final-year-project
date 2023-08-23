@@ -2,7 +2,7 @@
 
 include './connection.php';
 
-$error="Enter your credentials";
+$error="";
 $success="";
 $currentDate = date('Y-m-d'); 
 
@@ -23,18 +23,29 @@ if(isset($_POST['submit'])){
         if(empty($username)){
             $error = "Enter a username";
         }
-        if(empty($password)){
-            $error = 'Enter a password';
-        }
-    }
-
-    $sqlinsert= "INSERT INTO `users` (username,email,password,date_joined,role) VALUES ('$username','$email','$password','$currentDate','Customer')";
-    $result= mysqli_query($con, $sqlinsert);
-    if($result){
-        header("location: ./signed.php");
-    }
-    else{
-        die("error occurred: ".mysqli_error($con));
+        else{
+            if(empty($password)){
+                $error = 'Enter a password';
+            }
+            else{
+                $sqlcheck = "SELECT * FROM `users` WHERE username='$username'";
+                $resultcheck= mysqli_query($con,$sqlcheck);
+                $numscheck= mysqli_num_rows($resultcheck);
+                if($numscheck > 0){
+                    $error = "Username already exists. Choose another.";
+                }
+                else{
+                    $sqlinsert= "INSERT INTO `users` (username,email,password,date_joined,role) VALUES ('$username','$email','$password','$currentDate','Customer')";
+                    $result= mysqli_query($con, $sqlinsert);
+                    if($result){
+                        header("location: ./signed.php");
+                    }
+                    else{
+                        die("error occurred: ".mysqli_error($con));
+                    }
+                }
+            }
+        }     
     }
 }
 
@@ -60,7 +71,8 @@ if(isset($_POST['submit'])){
         </div>
         <h1 class="heading">Sign Up</h1>
         <div class="box">
-            <p class="box-title" id="boxTitle"><?php echo $error; ?></p>
+            <p class="error" id="error"><?php echo $error; ?></p>
+            <p class="box-title" id="boxTitle">Enter your credentials</p>
             <form action="./signup.php" method="post" id="form">
                 <div class="form">
                     <div class="input">
