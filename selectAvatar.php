@@ -55,6 +55,7 @@ $currentDate = date('Y-m-d');
 
     <script>
         let images = document.getElementById('imgBox');
+        //console.log(images.children)
         let prevSelected = null;
         //let avatars = document.querySelectorAll('.avatar');
         
