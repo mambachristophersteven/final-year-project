@@ -75,6 +75,15 @@
     gap: 5px;
 }
 
+#current{
+    background: black;
+    color: white;
+}
+
+#current img{
+    filter: invert(100%);
+}
+
 .box .up{
     display: flex;
     width: 100%;
@@ -90,7 +99,6 @@
 .box-name{
     font-family: poppinsSemiBold;
     font-size: 18px;
-    color: black;
 }
 
 .summary{
@@ -100,8 +108,97 @@
 }
 
 
+.button-div{
+    width: 100%;
+}
 
+.button-div button{
+    background: black;
+    color: white;
+    font-family: poppinsBold;
+    font-size: 15px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    height: 40px;
+    width: 140px;
+}
 
+.menu-list-div{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-heading{
+    font-family: poppinsBold;
+    font-size: 20px;
+}
+
+.search{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input{
+    width: 100%;
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input input{
+    background: rgba(234, 234, 234, 1);
+    width: 100%;
+    height: inherit;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding: 0px 5px;
+    color: rgba(0, 0, 0, 0.65);
+    font-family: poppinsBold;
+}
+
+.input img{
+    position: absolute;
+    right: 10%;
+}
+
+input[type = "submit"]{
+    width: 80px;
+    height: 30px;
+    padding: 2px;
+    color: white;
+    font-family: poppinsBold;
+    font-size: 12px;
+    background: black;
+    align-self: flex-end;
+    border-radius: 5px;
+}
+
+.meals{
+    width: 100%;
+    border: 2px solid red;
+}
+
+.meal{
+    border: 2px solid blue;
+}
 
 .menubar{
     width: 95%;
