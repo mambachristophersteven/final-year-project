@@ -23,7 +23,7 @@ $position=$row['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/chefhome.css">
+    <link rel="stylesheet" href="../..//styles/chefhom.css">
     <title>Winkies - Chef</title>
 </head>
 <body>
@@ -113,8 +113,15 @@ $position=$row['role'];
                     <th>image</th>
                     <th>name</th>
                     <th>price</th>
-                    <th> times ordered</th>
+                    <th>orders</th>
                 </thead>
+                <tr>
+                    <td><p class="meal-ranking">1</p></td>
+                    <td><img src="../../assets/meals/1.svg" alt="meal-image"></td>
+                    <td><p class="meal-name">Sweet Sweet benji</p></td>
+                    <td><p class="meal-price">¢95.00</p></td>
+                    <td><p class="meal-orders">33</p></td>
+                </tr>
                 <tr>
                     <td><p class="meal-ranking">1</p></td>
                     <td><img src="../../assets/meals/1.svg" alt="meal-image"></td>
