@@ -135,7 +135,7 @@ $position=$row['role'];
         <div class="menubar">
             <div class="menu-icons">
                 <div class="icon" class="active-page">
-                    <a href="#"><img src="../../assets/icons/home.svg" alt="home"></a>
+                    <a href="./homechef.php"><img src="../../assets/icons/home.svg" alt="home"></a>
                     <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
@@ -151,7 +151,7 @@ $position=$row['role'];
                     <a href="#"><img src="../../assets/icons/checkmark-done.svg" alt="completed"></a>
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/settings.svg" alt="settings"></a>
+                    <a href="./customization.php"><img src="../../assets/icons/settings.svg" alt="settings"></a>
                 </div>
             </div>
         </div>
