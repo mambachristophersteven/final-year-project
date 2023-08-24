@@ -23,8 +23,8 @@ $position=$row['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/customization.css">
-    <title>Winkies - Chef Customization</title>
+    <link rel="stylesheet" href="../..//styles/addnewmeal.css">
+    <title>Winkies - Chef Add New Meal</title>
 </head>
 <body>
     <div class="container">
@@ -34,56 +34,16 @@ $position=$row['role'];
         </div>
         <div class="welcome">
             <p class="name">Hello, Chef <?php echo $username; ?>.</p>
-            <p class="motivation">Customize the restaurant as you please.</p>
+            <p class="motivation">Add a new meal to the menu</p>
         </div>
         <p class="page">Customization</p>
-        <div class="boxes">
-            <div class="box" id="current">
-                <div class="up">
-                    <p class="number">560</p>
-                    <img src="../../assets/icons/allMeals.svg" alt="current">
+        <div class="box">
+            <p class="box-heading">Enter Meal Details</p>
+            <form action="#">
+                <div class="image-input">
+                    
                 </div>
-                <div class="middle">
-                    <p class="box-name">All meals</p>
-                </div>
-                <div class="down">
-                    <p class="summary">Total number of food meals we have in our menu..</p>
-                </div>
-            </div>
-            <div class="box">
-                <div class="up">
-                    <p class="number">120</p>
-                    <img src="../../assets/icons/current.svg" alt="current">
-                </div>
-                <div class="middle">
-                    <p class="box-name">Current meals</p>
-                </div>
-                <div class="down">
-                    <p class="summary">Total number of food meals we have in our menu currently.</p>
-                </div>
-            </div>
-        </div>
-        <div class="button-div">
-            <a href="#" class="button">
-                <button>Add New Meal</button>
-            </a>
-        </div>
-        <div class="menu-list-div">
-            <p class="section-heading">All Meals List</p>
-            <div class="search">
-                <form action="#">
-                    <div class="input">
-                        <input type="text" name="search" id="search" placeholder="search all meals">
-                        <img src="../../assets/icons/search.svg" alt="">
-                    </div>
-                    <input type="submit" value="search" name="search" id="searchButton">
-                </form>
-            </div>
-            <div class="meals">
-                <div class="meal">
-                    <p>meal box here</p>
-                </div>
-            </div>
+            </form>
         </div>
 
         <div class="menubar">

@@ -64,7 +64,7 @@ $position=$row['role'];
             </div>
         </div>
         <div class="button-div">
-            <a href="#" class="button">
+            <a href="./addmeal.php" class="button">
                 <button>Add New Meal</button>
             </a>
         </div>
