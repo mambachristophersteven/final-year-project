@@ -23,7 +23,7 @@ $position=$row['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/chefhom.css">
+    <link rel="stylesheet" href="../..//styles/chefho.css">
     <title>Winkies - Chef</title>
 </head>
 <body>
@@ -145,7 +145,7 @@ $position=$row['role'];
                     <a href="#"><img src="../../assets/icons/pending.svg" alt="pending orders"></a>
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/meal.svg" alt="meals"></a>
+                    <a href="#"><img src="../../assets/icons/meals.svg" alt="meals"></a>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/checkmark-done.svg" alt="completed"></a>

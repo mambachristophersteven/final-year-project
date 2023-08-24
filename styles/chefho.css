@@ -208,4 +208,46 @@ th{
 
 .meal-name{
     font-family: poppinsSemiBold;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.meal-price{
+    font-family: poppinsSemiBold;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.meal-orders{
+    font-family: poppinsSemiBold;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.most-Ordered a{
+    color: rgb(51, 51, 51);
+    font-family: poppinsSemiBold;
+    font-size: 12px;
+}
+
+.menubar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-icons{
+    display: flex;
+    align-items: center;
+    background: black;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2px 10px;
+    border-radius: 10px;
+    height: 60px;
+}
+
+.menu-icons a img{
+    width: 30px;
 }
