@@ -134,9 +134,9 @@ $position=$row['role'];
         </div>
         <div class="menubar">
             <div class="menu-icons">
-                <div class="icon">
+                <div class="icon" class="active-page">
                     <a href="#"><img src="../../assets/icons/home.svg" alt="home"></a>
-                    <img src="../../assets/icons/active.svg" alt="current page" class="active-page">
+                    <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/new.svg" alt="orders"></a>
