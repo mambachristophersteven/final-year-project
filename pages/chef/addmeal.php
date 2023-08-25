@@ -23,7 +23,7 @@ $position=$row['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/addnewmeal.css">
+    <link rel="stylesheet" href="../..//styles/addnewme.css">
     <title>Winkies - Chef Add New Meal</title>
 </head>
 <body>
@@ -36,11 +36,11 @@ $position=$row['role'];
             <p class="name">Hello, Chef <?php echo $username; ?>.</p>
             <p class="motivation">Add a new meal to the menu</p>
         </div>
-        <p class="page">Customization</p>
+        <p class="page">Add New Meal</p>
         <div class="box">
             <p class="box-heading">Enter Meal Details</p>
-            <p class="error"></p>
-            <form action="#">
+            <p id="error"></p>
+            <form action="#" id="form">
                 <div class="wrapper">
                     <label for="image">
                         <img src="../../assets//icons/image.svg" alt="" id="imageContainer">
@@ -48,30 +48,29 @@ $position=$row['role'];
                     <input type="file" name="image" id="image" accept="image/*" hidden >
                 </div>
                 <div class="input">
-                    <input type="text" name="meal-name" id="meal-name" placeholder="enter name of meal">
+                    <input type="text" name="name" id="name" placeholder="enter name of meal">
                 </div>
                 <div class="input">
-                    <input type="number" name="meal-price" id="meal-price" placeholder="enter price of meal" min="0">
+                    <input type="number" name="price" id="price" placeholder="enter price of meal" min="0">
                 </div>
                 <div class="input">
                     <textarea name="description" id="description" placeholder="enter description of meal"></textarea>
                 </div>
                 <div class="input">
-                    <input type="text" name="meal-name" id="meal-name" placeholder="enter name of meal">
+                    <input type="text" name="category" id="category" placeholder="enter category of meal">
                 </div>
-                <p class="ingredient-text">ingredients</p>
+                <p class="ingredient-text"> main ingredients</p>
                 <div class="ingredients">
                     <input type="text" name="ingredient 1" id="ingredient1">
-                    <input type="text" name="ingredient 1" id="ingredient1">
-                    <input type="text" name="ingredient 1" id="ingredient1">
-                    <input type="text" name="ingredient 1" id="ingredient1">
+                    <input type="text" name="ingredient 2" id="ingredient2">
+                    <input type="text" name="ingredient 3" id="ingredient3">
+                    <input type="text" name="ingredient 4" id="ingredient4">
                 </div>
                 <div class="input">
                     <input type="submit" value="Add Meal" name="submit">
                 </div>
             </form>
         </div>
-
         <div class="menubar">
             <div class="menu-icons">
                 <div class="icon">
@@ -96,6 +95,7 @@ $position=$row['role'];
             </div>
         </div>
     </div>
+    <script src="../../interactivity/addmeal.js"></script>
     
 </body>
 </html>
