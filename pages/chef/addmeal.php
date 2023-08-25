@@ -13,8 +13,17 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
+$name = "";
+$price = "";
+$description = "";
+$category = "";
+$ingredient1 = "";
+$ingredient2 = "";
+$ingredient3 = "";
+$ingredient4 = "";
+
 if(isset($_POST['submit'])){
-    echo 'helloooo';
+    
 }
 
 
@@ -27,7 +36,7 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/addnewme.css">
+    <link rel="stylesheet" href="../..//styles/addnewm.css">
     <title>Winkies - Chef Add New Meal</title>
 </head>
 <body>
@@ -44,7 +53,7 @@ if(isset($_POST['submit'])){
         <div class="box">
             <p class="box-heading">Enter Meal Details</p>
             <p id="error"></p>
-            <form action="#" id="form">
+            <form action="./addmeal.php" method="post" enctype="multipart/form-data"id="form">
                 <div class="wrapper">
                     <label for="image">
                         <img src="../../assets//icons/image.svg" alt="" id="imageContainer">
@@ -60,8 +69,25 @@ if(isset($_POST['submit'])){
                 <div class="input">
                     <textarea name="description" id="description" placeholder="enter description of meal"></textarea>
                 </div>
+                <p class="ingredient-text">choose category</p>
                 <div class="input">
-                    <input type="text" name="category" id="category" placeholder="enter category of meal">
+                    <select name="category" id="category">
+                        <option value=""></option>
+                        <option value="Burgers">Burgers</option>
+                        <option value="Salads">Salad</option>
+                        <option value="Juices">Juices</option>
+                        <option value="Hot Dogs">Hot Dogs</option>
+                        <option value="Fries">Fries</option>
+                        <option value="Pizzas">Pizzas</option>
+                        <option value="Pastries">Pastries</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Brunch">Brunch</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Milkshakes">Milkshakes</option>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Chef Choice">Chef Choice</option>
+                        
+                    </select>
                 </div>
                 <p class="ingredient-text"> main ingredients</p>
                 <div class="ingredients">
