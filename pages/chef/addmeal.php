@@ -13,6 +13,10 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
+if(isset($_POST['submit'])){
+    echo 'helloooo';
+}
+
 
 ?>
 
