@@ -40,8 +40,33 @@ $position=$row['role'];
         <div class="box">
             <p class="box-heading">Enter Meal Details</p>
             <form action="#">
-                <div class="image-input">
-                    
+                <div class="wrapper">
+                    <label for="image">
+                        <img src="../../assets//icons/image.svg" alt="" id="imageContainer">
+                    </label>
+                    <input type="file" name="image" id="image" accept="image/*" hidden >
+                </div>
+                <div class="input">
+                    <input type="text" name="meal-name" id="meal-name" placeholder="enter name of meal">
+                </div>
+                <div class="input">
+                    <input type="number" name="meal-price" id="meal-price" placeholder="enter price of meal" min="0">
+                </div>
+                <div class="input">
+                    <textarea name="description" id="description" placeholder="enter description of meal"></textarea>
+                </div>
+                <div class="input">
+                    <input type="text" name="meal-name" id="meal-name" placeholder="enter name of meal">
+                </div>
+                <p class="ingredient-text">ingredients</p>
+                <div class="ingredients">
+                    <input type="text" name="ingredient 1" id="ingredient1">
+                    <input type="text" name="ingredient 1" id="ingredient1">
+                    <input type="text" name="ingredient 1" id="ingredient1">
+                    <input type="text" name="ingredient 1" id="ingredient1">
+                </div>
+                <div class="input">
+                    <input type="submit" value="Add Meal" name="submit">
                 </div>
             </form>
         </div>
@@ -64,7 +89,7 @@ $position=$row['role'];
                     <a href="#"><img src="../../assets/icons/checkmark-done.svg" alt="completed"></a>
                 </div>
                 <div class="icon" class="active-page">
-                    <a href="#"><img src="../../assets/icons/settings.svg" alt="settings"></a>
+                    <a href="./customization.php"><img src="../../assets/icons/settings.svg" alt="settings"></a>
                     <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
             </div>
