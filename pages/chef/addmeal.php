@@ -39,6 +39,7 @@ $position=$row['role'];
         <p class="page">Customization</p>
         <div class="box">
             <p class="box-heading">Enter Meal Details</p>
+            <p class="error"></p>
             <form action="#">
                 <div class="wrapper">
                     <label for="image">
