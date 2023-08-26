@@ -33,7 +33,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/customization.css">
+    <link rel="stylesheet" href="../..//styles/customizatio.css">
     <title>Winkies - Chef Customization</title>
 </head>
 <body>
@@ -90,12 +90,36 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 </form>
             </div>
             <div class="meals">
-                <div class="meal">
-                    <p>meal box here</p>
-                </div>
+                <?php
+                    include '../../connection.php';
+                    $sqlshow = "SELECT * FROM `meals` ORDER by id ASC";
+                    $resultshow = mysqli_query($con,$sqlshow);
+                    $numshow = mysqli_num_rows($resultshow);
+                    if($resultshow){
+                        while($rowshow = mysqli_fetch_assoc($resultshow)){
+                            $meal_name = $rowshow['name'];
+                            $meal_price = '¢'.$rowshow['price'].'.00';
+                            $meal_description = $rowshow['description'];
+                            $meal_category = $rowshow['category'];
+                            $meal_image = $rowshow['image'];
+                            echo " 
+                            <div class='meal'>
+                                <img src='$meal_image' alt='meal_image' class='meal-image'>
+                                <p class='meal-name'>$meal_name</p>
+                                <p class='meal-price'>$meal_price</p>
+                                <p class='meal-desc'>$meal_description</p>
+                                <div class='buttons'>
+                                    <button><img src='../../assets/icons/edit.svg' alt=''></button>
+                                    <button><img src='../../assets/icons/trash.svg' alt=''></button>
+                                </div>
+                            </div>
+                            
+                            ";
+                        }
+                    }            
+                ?>
             </div>
         </div>
-
         <div class="menubar">
             <div class="menu-icons">
                 <div class="icon">

@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
                                         $sqlinsert= "INSERT INTO `meals` (name,price,description,category,image,ingredient1,ingredient2,ingredient3,ingredient4,date_added,on_menu) VALUES ('$name','$price','$description','$category','$upload_image','$ingredient1','$ingredient2','$ingredient3','$ingredient4','$currentDate','false')";
                                         $resultin= mysqli_query($con, $sqlinsert);
                                         if($resultin){
-                                            header("location: ./homechef.php");
+                                            header("location: ./customization.php");
                                             exit;
                                         }
                                         else{
