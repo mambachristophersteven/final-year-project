@@ -13,6 +13,10 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
+$currentDate = date('Y-m-d'); 
+
+$error = "";
+
 $name = "";
 $price = "";
 $description = "";
@@ -23,7 +27,77 @@ $ingredient3 = "";
 $ingredient4 = "";
 
 if(isset($_POST['submit'])){
-    
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $description = $_POST['description'];
+    $category = $_POST['category'];
+    $ingredient1 = $_POST['ingredient1'];
+    $ingredient2 = $_POST['ingredient2'];
+    $ingredient3 = $_POST['ingredient3'];
+    $ingredient4 = $_POST['ingredient4'];
+    $image = $_FILES['image'];
+
+    if(empty($name)){
+        $error = "Enter name of meal";
+    }
+    else{
+        if(empty($price)){
+            $error = "Enter price of meal";
+        }
+        else{
+            if(empty($description)){
+                $error = "Enter description of meal";
+            }
+            else{
+                if(empty($category)){
+                    $error = "Enter category of meal";
+                }
+                else{
+                    if(empty($ingredient1)){
+                        $error = "Enter ingredient of meal";
+                    }
+                    else{
+                        if(empty($ingredient2)){
+                            $error = "Enter ingredient of meal";
+                        }
+                        else{
+                            if(empty($ingredient3)){
+                                $error = "Enter ingredient of meal";
+                            }
+                            else{
+                                if(empty($ingredient4)){
+                                    $error = "Enter ingredient of meal";
+                                }
+                                else{
+                                    $imagefilename= $image['name'];
+                                    $imagefiletemp= $image['tmp_name'];
+                                    $imagefileerror= $image['error'];
+                                    $imagefiletype= $image['type'];
+                                    $filename_separate= explode('.',$imagefilename);
+                                    $imagefilenameextension= strtolower($filename_separate['1']);
+                                    $extensions= array('jpeg', 'jpg', 'png', 'svg');
+                                    if(in_array($imagefilenameextension,$extensions)){
+                                        $upload_image='../../meals/'.$imagefilename;
+                                        move_uploaded_file($imagefiletemp,$upload_image);
+                                        $sqlinsert= "INSERT INTO `meals` (name,price,description,category,image,ingredient1,ingredient2,ingredient3,ingredient4,date_added) VALUES ('$name','$price','$description','$category','$upload_image','$ingredient1','$ingredient2','$ingredient3','$ingredient4','$currentDate')";
+                                        $resultin= mysqli_query($con, $sqlinsert);
+                                        if($resultin){
+                                            header("location: ./homechef.php");
+                                            exit;
+                                        }
+                                        else{
+                                            die("error occurred: ".mysqli_error($con));
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 
@@ -52,7 +126,7 @@ if(isset($_POST['submit'])){
         <p class="page">Add New Meal</p>
         <div class="box">
             <p class="box-heading">Enter Meal Details</p>
-            <p id="error"></p>
+            <p id="error"><?php echo $error; ?></p>
             <form action="./addmeal.php" method="post" enctype="multipart/form-data"id="form">
                 <div class="wrapper">
                     <label for="image">
@@ -61,17 +135,17 @@ if(isset($_POST['submit'])){
                     <input type="file" name="image" id="image" accept="image/*" hidden >
                 </div>
                 <div class="input">
-                    <input type="text" name="name" id="name" placeholder="enter name of meal">
+                    <input type="text" name="name" id="name" placeholder="enter name of meal" value="<?php echo $name;?>">
                 </div>
                 <div class="input">
-                    <input type="number" name="price" id="price" placeholder="enter price of meal" min="0">
+                    <input type="number" name="price" id="price" placeholder="enter price of meal" min="0" value="<?php echo $price;?>">
                 </div>
                 <div class="input">
-                    <textarea name="description" id="description" placeholder="enter description of meal"></textarea>
+                    <textarea name="description" id="description" placeholder="enter description of meal" value="<?php echo $description;?>"></textarea>
                 </div>
                 <p class="ingredient-text">choose category</p>
                 <div class="input">
-                    <select name="category" id="category">
+                    <select name="category" id="category" value="<?php echo $category;?>">
                         <option value=""></option>
                         <option value="Burgers">Burgers</option>
                         <option value="Salads">Salad</option>
@@ -91,10 +165,10 @@ if(isset($_POST['submit'])){
                 </div>
                 <p class="ingredient-text"> main ingredients</p>
                 <div class="ingredients">
-                    <input type="text" name="ingredient 1" id="ingredient1">
-                    <input type="text" name="ingredient 2" id="ingredient2">
-                    <input type="text" name="ingredient 3" id="ingredient3">
-                    <input type="text" name="ingredient 4" id="ingredient4">
+                    <input type="text" name="ingredient1" id="ingredient1" value="<?php echo $ingredient1;?>">
+                    <input type="text" name="ingredient2" id="ingredient2" value="<?php echo $ingredient2;?>">
+                    <input type="text" name="ingredient3" id="ingredient3" value="<?php echo $ingredient3;?>">
+                    <input type="text" name="ingredient4" id="ingredient4" value="<?php echo $ingredient4;?>">
                 </div>
                 <div class="input">
                     <input type="submit" value="Add Meal" name="submit">

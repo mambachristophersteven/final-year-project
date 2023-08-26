@@ -13,6 +13,16 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
+$sqlmeals = "SELECT * FROM `meals`";
+$resultmeals = mysqli_query($con,$sqlmeals);
+$numsmeals = mysqli_num_rows($resultmeals);
+$rowmeals = mysqli_fetch_assoc($resultmeals);
+
+$sqlmeals_on_menu = "SELECT * FROM `meals` WHERE on_menu = 'true'";
+$resultmeals_on_menu = mysqli_query($con,$sqlmeals_on_menu);
+$numsmeals_on_menu = mysqli_num_rows($resultmeals_on_menu);
+$rowmeals = mysqli_fetch_assoc($resultmeals);
+
 
 ?>
 
