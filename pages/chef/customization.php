@@ -40,7 +40,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
     <div class="container">
         <div class="top">
             <img src="../../assets/images/logo-light.svg" alt="logo">
-            <img src="../../assets/avatars/9.svg" alt="">
+            <img src="../../assets/avatars/9.svg" alt="" id="user-profile">
         </div>
         <div class="welcome">
             <p class="name">Hello, Chef <?php echo $username; ?>.</p>
