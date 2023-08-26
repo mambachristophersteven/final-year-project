@@ -21,7 +21,7 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
 $sqlmeals_on_menu = "SELECT * FROM `meals` WHERE on_menu = 'true'";
 $resultmeals_on_menu = mysqli_query($con,$sqlmeals_on_menu);
 $numsmeals_on_menu = mysqli_num_rows($resultmeals_on_menu);
-$rowmeals = mysqli_fetch_assoc($resultmeals);
+$rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
 
 
 ?>
@@ -50,7 +50,7 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
         <div class="boxes">
             <div class="box" id="current">
                 <div class="up">
-                    <p class="number">560</p>
+                    <p class="number"><?php echo $numsmeals; ?></p>
                     <img src="../../assets/icons/allMeals.svg" alt="current">
                 </div>
                 <div class="middle">
@@ -62,7 +62,7 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
             </div>
             <div class="box">
                 <div class="up">
-                    <p class="number">120</p>
+                    <p class="number"><?php echo $numsmeals_on_menu; ?></p>
                     <img src="../../assets/icons/current.svg" alt="current">
                 </div>
                 <div class="middle">
