@@ -105,7 +105,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                             echo " 
                             <div class='meal'>
                                 <img src='$meal_image' alt='meal_image' class='meal-image'>
-                                <p class='meal-name'>$meal_name</p>
+                                <p class='meal-name'>$meal_name.</p>
                                 <p class='meal-price'>$meal_price</p>
                                 <p class='meal-desc'>$meal_description</p>
                                 <div class='buttons'>

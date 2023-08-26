@@ -237,7 +237,6 @@ input[type = "submit"]{
     font-size: 10px;
     text-align: right;
     color: rgb(158, 158, 158);
-    border: 2px solid red;
 }
 
 .buttons{
