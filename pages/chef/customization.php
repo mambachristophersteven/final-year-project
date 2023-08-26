@@ -174,6 +174,8 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
             </div>
         </div>
     </div>
+
+    <script src="../../interactivity/customization.js"></script>
     
 </body>
 </html>
