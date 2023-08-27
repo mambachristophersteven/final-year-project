@@ -22,7 +22,7 @@ $position=$row['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/customerhom.css">
+    <link rel="stylesheet" href="../..//styles/customerho.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
@@ -53,12 +53,12 @@ $position=$row['role'];
                 <a href="#">
                     <img src="../../assets/meals/9.svg" alt="meal-image" class="meal-image">
                 </a>
-                <p class="meal-name">The plate chritopher</p>
+                <p class="meal-name">The plate christopher</p>
                 <p class="meal-price">¢45.00</p>
                 <p class="meal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
                 <div class="button-and-heart">
                     <a href="#">
-                        <button>order now</button>
+                        <button class="order-button">order now</button>
                     </a>
                     <button class="like-button">
                         <img src="../../assets/icons/like.svg" alt="like button" id="like">
@@ -75,6 +75,24 @@ $position=$row['role'];
                 <p class="section-small">We recommend these meals for you. Try them</p>
             </div>
             <div class="meals">
+                <div class="recommended-meal">
+                    <div class="button-only">
+                        <button>
+                            <img src="../../assets/icons//like.svg" alt="like-button" id="rlike">
+                        </button>
+                        <button>
+                            <img src="../../assets/icons//liked.svg" alt="like-button" id="rliked">
+                        </button>
+                    </div>
+                    <a href="#">
+                        <img src="../../assets/meals/11.svg" alt="meal-image">
+                    </a>  
+                    <div class="meal-info">
+                        <p class="rmeal-name">Black Panther</p>
+                        <p class="rmeal-price">¢18.00</p>
+                        <p class="rmeal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
+                    </div>               
+                </div>
                 <div class="recommended-meal">
                     <div class="button-only">
                         <button>
@@ -109,8 +127,9 @@ $position=$row['role'];
         </div>
         <div class="menubar">
             <div class="menu-icons">
-                <div class="icon">
-                    <a href="./homechef.php"><img src="../../assets/icons/home.svg" alt="home"></a>
+                <div class="icon" class="active-page">
+                    <a href="./homecustomer.php"><img src="../../assets/icons/home.svg" alt="home"></a>
+                    <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/heart.svg" alt="favorites"></a>
@@ -121,9 +140,8 @@ $position=$row['role'];
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/cart.svg" alt="cart"></a>
                 </div>
-                <div class="icon" class="active-page">
+                <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>
-                    <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
             </div>
         </div>
