@@ -148,5 +148,7 @@ $position=$row['role'];
 
     </div>
     
+
+    <script src="../../interactivity/customerhome.js"></script>
 </body>
 </html>
