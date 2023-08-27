@@ -85,6 +85,17 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 </a>
             </div>
         </div>
+        <div class="categories-section">
+            <div class="categories-top">
+                <p class="categories-heading">Categories</p>
+                <img src="../../assets/icons/categories.svg" alt="">
+            </div>
+            <div class="category-images">
+                <div class="category-image">
+                    <button></button>
+                </div>
+            </div>
+        </div>
         <div class="menubar">
             <div class="menu-icons">
                 <div class="icon" class="active-page">
