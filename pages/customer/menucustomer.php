@@ -91,22 +91,81 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 <img src="../../assets/icons/categories.svg" alt="">
             </div>
             <div class="category-images">
-                <div class="category-image">
-                    <button></button>
+                <div class="category-image" class="current-category">
+                    <button>
+                        <img src="../../assets/categories/all.svg" alt="category-image">
+                    </button>
+                    <img src="../../assets/categories/current.svg" alt="current">
+                </div>
+                <div class="category-image" class="current-category">
+                    <button>
+                        <img src="../../assets/categories/breakfast.svg" alt="category-image">
+                    </button>
+                </div>
+                <div class="category-image" class="current-category">
+                    <button>
+                        <img src="../../assets/categories/dinner.svg" alt="category-image">
+                    </button>
+                </div>
+                <div class="category-image" class="current-category">
+                    <button>
+                        <img src="../../assets/categories/pizza.svg" alt="category-image">
+                    </button>
+                </div>
+                <div class="category-image" class="current-category">
+                    <button>
+                        <img src="../../assets/categories/steaks.svg" alt="category-image">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="list-section">
+            <div class="section-top">
+                <p class="section-heading">All Foods</p>
+                <p class="section-small">Explore all our meals and quisines</p>
+            </div>
+            <div class="meals">
+                <div class='meal'>
+                    <img src='../../assets/meals/5.svg' alt='meal_image' class='meal-image'>
+                    <p class='meal-name'>Karl mucho</p>
+                    <p class='meal-price'>¢67.00</p>
+                    <p class='meal-desc'>Originating from the tribe of Ubuntu, this meal is the taste of....</p>
+                    <div class='buttons'>
+                        <button class="like-button">
+                            <img src="../../assets/icons/like.svg" alt="like button" id="like">
+                        </button>
+                        <button class="like-button">
+                            <img src="../../assets/icons/liked.svg" alt="like button" id="liked">
+                        </button>
+                    </div>
+                </div>
+                <div class='meal'>
+                    <img src='../../assets/meals/4.svg' alt='meal_image' class='meal-image'>
+                    <p class='meal-name'>Karl mucho</p>
+                    <p class='meal-price'>¢67.00</p>
+                    <p class='meal-desc'>Originating from the tribe of Ubuntu, this meal is the taste of....</p>
+                    <div class='buttons'>
+                        <button class="like-button">
+                            <img src="../../assets/icons/like.svg" alt="like button" id="like">
+                        </button>
+                        <button class="like-button">
+                            <img src="../../assets/icons/liked.svg" alt="like button" id="liked">
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="menubar">
             <div class="menu-icons">
-                <div class="icon" class="active-page">
+                <div class="icon">
                     <a href="./homecustomer.php"><img src="../../assets/icons/home.svg" alt="home"></a>
-                    <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/heart.svg" alt="favorites"></a>
                 </div>
-                <div class="icon">
+                <div class="icon" class="active-page">
                     <a href="./menucustomer.php"><img src="../../assets/icons/menu.svg" alt="menu"></a>
+                    <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/cart.svg" alt="cart"></a>
