@@ -22,7 +22,7 @@ $position=$row['role'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/customerhome.css">
+    <link rel="stylesheet" href="../..//styles/customerhom.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
@@ -71,8 +71,9 @@ $position=$row['role'];
         </div>
         <div class="recommended">
             <div class="top-section">
-            <p class="section-title">Recommended</p>
-            <p class="section-small">We recommend these meals for you. Try them</p>
+                <p class="section-title">Recommended</p>
+                <p class="section-small">We recommend these meals for you. Try them</p>
+            </div>
             <div class="meals">
                 <div class="recommended-meal">
                     <div class="button-only">
@@ -104,7 +105,6 @@ $position=$row['role'];
                         <p class="rmeal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
                     </div>               
                 </div>
-            </div>
             </div>
         </div>
         <div class="menubar">
