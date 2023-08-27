@@ -77,41 +77,11 @@ $position=$row['role'];
             <div class="meals">
                 <div class="recommended-meal">
                     <div class="button-only">
-                        <button>
-                            <img src="../../assets/icons//like.svg" alt="like-button" id="rlike">
-                        </button>
-                        <button>
-                            <img src="../../assets/icons//liked.svg" alt="like-button" id="rliked">
-                        </button>
-                    </div>
-                    <a href="#">
-                        <img src="../../assets/meals/11.svg" alt="meal-image">
-                    </a>  
-                    <div class="meal-info">
-                        <p class="rmeal-name">Black Panther</p>
-                        <p class="rmeal-price">¢18.00</p>
-                        <p class="rmeal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
-                    </div>               
-                </div>
-                <div class="recommended-meal">
-                    <div class="button-only">
-                        <button>
+                        <button id="rlike">
                             <img src="../../assets/icons//like.svg" alt="like-button">
                         </button>
-                    </div>
-                    <a href="#">
-                        <img src="../../assets/meals/11.svg" alt="meal-image">
-                    </a>  
-                    <div class="meal-info">
-                        <p class="rmeal-name">Black Panther</p>
-                        <p class="rmeal-price">¢18.00</p>
-                        <p class="rmeal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
-                    </div>               
-                </div>
-                <div class="recommended-meal">
-                    <div class="button-only">
-                        <button>
-                            <img src="../../assets/icons//like.svg" alt="like-button">
+                        <button id="rliked">
+                            <img src="../../assets/icons//liked.svg" alt="like-button">
                         </button>
                     </div>
                     <a href="#">
