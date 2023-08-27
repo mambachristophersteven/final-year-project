@@ -151,8 +151,37 @@ input[type = "submit"]{
 }
 
 .top-section{
-    border: 2px solid green;
     display: flex;
     width: 100%;
-    
+    align-items: flex-start;
+    flex-direction: column;
 }
+
+.section-title{
+    font-family: poppinsBold;
+    font-size: 20px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.section-small{
+    font-family: poppinsSemiBold;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -46,8 +46,8 @@ $position=$row['role'];
         </div>
         <div class="best-selling-section">
             <div class="top-section">
-                <p class="section-title">best selling today</p>
-                <p class="section-small">This is what people are buying the most today</p>
+                <p class="section-title">best selling today.</p>
+                <p class="section-small">This is what people are buying the most today.</p>
             </div>
             <div class="meal-box">
                 <a href="#">
