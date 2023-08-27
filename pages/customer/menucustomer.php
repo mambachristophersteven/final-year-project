@@ -109,6 +109,6 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
     </div>
     
 
-    <script src="../../interactivity/customerhome.js"></script>
+    <script src="../../interactivity/menucustomer.js"></script>
 </body>
 </html>
