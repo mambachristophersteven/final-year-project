@@ -107,6 +107,26 @@ $position=$row['role'];
             </div>
             </div>
         </div>
+        <div class="menubar">
+            <div class="menu-icons">
+                <div class="icon">
+                    <a href="./homechef.php"><img src="../../assets/icons/home.svg" alt="home"></a>
+                </div>
+                <div class="icon">
+                    <a href="#"><img src="../../assets/icons/heart.svg" alt="favorites"></a>
+                </div>
+                <div class="icon">
+                    <a href="#"><img src="../../assets/icons/menu.svg" alt="menu"></a>
+                </div>
+                <div class="icon">
+                    <a href="#"><img src="../../assets/icons/cart.svg" alt="cart"></a>
+                </div>
+                <div class="icon" class="active-page">
+                    <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>
+                    <img src="../../assets/icons/active.svg" alt="current page">
+                </div>
+            </div>
+        </div>
 
     </div>
     
