@@ -47,8 +47,8 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
             <p class="name">Hello, Chef <?php echo $username; ?>.</p>
             <p class="motivation">Customize the restaurant as you please.</p>
         </div>
-        <div class="user-profile" id="user-profile">
-            <img src="../../assets/icons/close.svg" alt="">
+        <div class="user-profile" id="user-profile-box">
+            <img src="../../assets/icons/close.svg" alt="" id="close">
             <div class="user-avatar">
                 <p class="user">User Profile</p>
                 <img src="../../assets/avatars/9.svg" alt="user avatar">
@@ -71,7 +71,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 <a href="#">
                     <button id="edit">edit profile info</button>
                 </a>
-                <a href="#">
+                <a href="../../logout.php">
                     <button id="logout">logout</button>
                 </a>
             </div>
