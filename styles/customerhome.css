@@ -1,0 +1,46 @@
+.container{
+    width: 412px;
+    min-height: 100vh;
+    background-image: url(../assets/images/background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* position: relative; */
+    border: 2px solid rgb(155, 146, 146);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px 60px 15px;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.top img:first-child{
+    width: 105px
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.name{
+    font-family: poppinsBold;
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.79);
+    text-transform: capitalize;
+}
+
+.motivation{
+    font-family: poppinsBold;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
