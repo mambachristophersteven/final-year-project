@@ -99,9 +99,6 @@ input[type = "submit"]{
     border-radius: 5px;
 }
 
-
-
-
 .menubar{
     width: 100%;
     display: flex;
@@ -332,4 +329,100 @@ input[type = "submit"]{
     font-family: poppinsSemiBold;
     font-size: 10px;
     color: rgb(170, 170, 170);
+}
+
+.user-profile{
+    width: 90%;
+    height: 600px;
+    position: absolute;
+    background: #fff;
+    top: 8%;
+    z-index: 100;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 30px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    display: none;
+}
+
+.user-profile > img{
+    position: absolute;
+    right: 5%;
+}
+
+.user-avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.user{
+    font-family: poppinsSemiBold;
+    font-size: 22px;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.user-avatar img{
+    width: 50px;
+}
+
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-title{
+    font-family: poppinsBold;
+    font-size: 14px;
+    color: #1a1919;
+}
+
+.info-value{
+    font-family: poppinsBold;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.79);
+}
+
+.user-buttons{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.user-buttons button{
+    width: 300px;
+    height: 70px;
+    color: white;
+    font-family: poppinsBold;
+    border-radius: 7px;
+    font-size: 30px;
+    text-transform: capitalize;
+    background: #000;
+}
+
+/* .user-buttons button:first-child{
+    background: #000;
+} */
+
+#logout{
+    background: rgb(77, 72, 72);
 }
