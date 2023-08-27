@@ -34,7 +34,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/customerho.css">
+    <link rel="stylesheet" href="../..//styles/menucustomer.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
@@ -83,57 +83,6 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 <a href="../../logout.php">
                     <button id="logout">logout</button>
                 </a>
-            </div>
-        </div>
-        <div class="best-selling-section">
-            <div class="top-section">
-                <p class="section-title">best selling today.</p>
-                <p class="section-small">This is what people are buying the most today.</p>
-            </div>
-            <div class="meal-box">
-                <a href="#">
-                    <img src="../../assets/meals/9.svg" alt="meal-image" class="meal-image">
-                </a>
-                <p class="meal-name">The plate christopher</p>
-                <p class="meal-price">¢45.00</p>
-                <p class="meal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
-                <div class="button-and-heart">
-                    <a href="#">
-                        <button class="order-button">order now</button>
-                    </a>
-                    <button class="like-button">
-                        <img src="../../assets/icons/like.svg" alt="like button" id="like">
-                    </button>
-                    <button class="like-button">
-                        <img src="../../assets/icons/liked.svg" alt="like button" id="liked">
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="recommended">
-            <div class="top-section">
-                <p class="section-title">Recommended</p>
-                <p class="section-small">We recommend these meals for you. Try them</p>
-            </div>
-            <div class="meals">
-                <div class="recommended-meal">
-                    <div class="button-only">
-                        <button id="rlike">
-                            <img src="../../assets/icons//like.svg" alt="like-button">
-                        </button>
-                        <button id="rliked">
-                            <img src="../../assets/icons//liked.svg" alt="like-button">
-                        </button>
-                    </div>
-                    <a href="#">
-                        <img src="../../assets/meals/11.svg" alt="meal-image">
-                    </a>  
-                    <div class="meal-info">
-                        <p class="rmeal-name">Black Panther</p>
-                        <p class="rmeal-price">¢18.00</p>
-                        <p class="rmeal-description">Originating from the tribe of Ubuntu, this meal is the taste of....</p>
-                    </div>               
-                </div>
             </div>
         </div>
         <div class="menubar">
