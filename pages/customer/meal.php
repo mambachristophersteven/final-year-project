@@ -65,21 +65,13 @@ $ingredient4=$rowview['ingredient4'];
                 <div class="image-like-quantity">
                     <img src="<?php echo $image;?>" alt="">
                     <div class="buttons">
-                        <button id="like" class="like-button">
-                            <img src="../../assets/icons/like.svg" alt="" >
-                        </button>
-                        <button id="liked" class="like-button">
-                            <img src="../../assets/icons/liked.svg" alt="">
-                        </button>
+                        <img src="../../assets/icons/like.svg" alt="" id="like" class="like-button">
+                        <img src="../../assets/icons/liked.svg" alt="" id="liked" class="like-button">
                     </div>
                     <div class="quantity">
-                        <button id="decrease">
-                            <img src="../../assets/icons/remove.svg" alt="">
-                        </button>
+                        <img src="../../assets/icons/remove.svg" alt="">
                         <input type="number" name="quantity" id="quantity" value="1" min="1">
-                        <button id="increase">
-                            <img src="../../assets/icons/add.svg" alt="">
-                        </button>
+                        <img src="../../assets/icons/add.svg" alt="">
                     </div>
                 </div>
                 <div class="meal-info">
@@ -111,13 +103,13 @@ $ingredient4=$rowview['ingredient4'];
                 </div>
                 <div class="total">
                     <p class="total-heading">Total amount</p>
-                    <input type="number" id="total-amount" value="111170.00" disabled>
+                    <input type="number" id="total-amount" value="455670.00" disabled>
                 </div>
                 <input type="submit" value="add to cart">
             </form>
         </div>       
     </div>
 
-    <script src="../../interactivity/meal.js"></script>
+    <script src="../../interactivity/individualmea.js"></script>
 </body>
 </html>
