@@ -137,6 +137,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 if($resultshow){
                     while($rowshow = mysqli_fetch_assoc($resultshow)){
                         $meal_name = $rowshow['name'];
+                        $id = $rowshow['id'];
                         $meal_price = '¢'.$rowshow['price'].'.00';
                         $meal_description = $rowshow['description'];
                         $meal_category = $rowshow['category'];
@@ -144,7 +145,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
 
                         echo "
                         <div class='meal'>
-                            <a href='#'>
+                            <a href='./meal.php?viewid=$id'>
                                 <img src='$meal_image' alt='meal_image' class='meal-image'>
                             </a>
                             <p class='meal-name'>$meal_name</p>
