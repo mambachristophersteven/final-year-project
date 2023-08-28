@@ -130,6 +130,7 @@ input[type = "submit"]{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .active-page{
@@ -399,4 +400,13 @@ input[type = "submit"]{
 
 #liked{
     display: none;
+}
+
+#cart-count{
+    color: white;
+    font-family: poppinsBold;
+    font-size: 11px;
+    position: absolute;
+    right: -25%;
+    top: -10%;
 }

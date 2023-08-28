@@ -85,7 +85,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 </a>
             </div>
         </div>
-        <div class="categories-section">
+        <!-- <div class="categories-section">
             <div class="categories-top">
                 <p class="categories-heading">Categories</p>
                 <img src="../../assets/icons/categories.svg" alt="">
@@ -122,7 +122,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                     <img src="../../assets/categories/current.svg" alt="current">
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="list-section">
             <div class="section-top">
                 <p class="section-heading">All Foods</p>
@@ -133,20 +133,6 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                     <a href="#">
                         <img src='../../assets/meals/5.svg' alt='meal_image' class='meal-image'>
                     </a>
-                    <p class='meal-name'>Karl mucho</p>
-                    <p class='meal-price'>¢67.00</p>
-                    <p class='meal-desc'>Originating from the tribe of Ubuntu, this meal is the taste of....</p>
-                    <div class='buttons'>
-                        <button class="like-button">
-                            <img src="../../assets/icons/like.svg" alt="like button" id="like">
-                        </button>
-                        <button class="like-button">
-                            <img src="../../assets/icons/liked.svg" alt="like button" id="liked">
-                        </button>
-                    </div>
-                </div>
-                <div class='meal'>
-                    <img src='../../assets/meals/4.svg' alt='meal_image' class='meal-image'>
                     <p class='meal-name'>Karl mucho</p>
                     <p class='meal-price'>¢67.00</p>
                     <p class='meal-desc'>Originating from the tribe of Ubuntu, this meal is the taste of....</p>
@@ -175,6 +161,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/cart.svg" alt="cart"></a>
+                    <p id="cart-count">2</p>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>
