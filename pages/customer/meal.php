@@ -57,7 +57,9 @@ $ingredient4=$rowview['ingredient4'];
         <div class="form">
             <form action="#">
                 <div class="top">
-                    <img src="../../assets/icons/whiteBack.svg" alt="back">
+                    <a href="./menucustomer.php">
+                        <img src="../../assets/icons/whiteBack.svg" alt="back">
+                    </a>
                     <img src="../../assets/icons/cart.svg" alt="back">
                 </div>
                 <div class="image-like-quantity">
@@ -74,7 +76,7 @@ $ingredient4=$rowview['ingredient4'];
                         <button id="decrease">
                             <img src="../../assets/icons/remove.svg" alt="">
                         </button>
-                        <input type="number" name="quantity" id="quantity">
+                        <input type="number" name="quantity" id="quantity" value="1" min="1">
                         <button id="increase">
                             <img src="../../assets/icons/add.svg" alt="">
                         </button>
@@ -90,7 +92,7 @@ $ingredient4=$rowview['ingredient4'];
                         <p class="meal-description"><?php echo $description;?></p>
                     </div>
                     <div class="ingredients">
-                        <p class="ingredient-heading">Description</p>
+                        <p class="ingredient-heading">Ingredients</p>
                         <div class="ingredient-boxes">
                             <div class="ingredient-box">
                                 <p><?php echo $ingredient1; ?></p>
@@ -109,7 +111,7 @@ $ingredient4=$rowview['ingredient4'];
                 </div>
                 <div class="total">
                     <p class="total-heading">Total amount</p>
-                    <input type="number" id="total-amount" value="70.00">
+                    <input type="number" id="total-amount" value="111170.00" disabled>
                 </div>
                 <input type="submit" value="add to cart">
             </form>
