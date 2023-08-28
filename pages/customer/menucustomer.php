@@ -91,31 +91,35 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 <img src="../../assets/icons/categories.svg" alt="">
             </div>
             <div class="category-images">
-                <div class="category-image" class="current-category">
+                <div class="category-image current-category" class="current-category">
                     <button>
                         <img src="../../assets/categories/all.svg" alt="category-image">
                     </button>
                     <img src="../../assets/categories/current.svg" alt="current">
                 </div>
-                <div class="category-image" class="current-category">
+                <div class="category-image">
                     <button>
                         <img src="../../assets/categories/breakfast.svg" alt="category-image">
                     </button>
+                    <img src="../../assets/categories/current.svg" alt="current">
                 </div>
-                <div class="category-image" class="current-category">
+                <div class="category-image">
                     <button>
                         <img src="../../assets/categories/dinner.svg" alt="category-image">
                     </button>
+                    <img src="../../assets/categories/current.svg" alt="current">
                 </div>
-                <div class="category-image" class="current-category">
+                <div class="category-image">
                     <button>
                         <img src="../../assets/categories/pizza.svg" alt="category-image">
                     </button>
+                    <img src="../../assets/categories/current.svg" alt="current">
                 </div>
-                <div class="category-image" class="current-category">
+                <div class="category-image">
                     <button>
                         <img src="../../assets/categories/steaks.svg" alt="category-image">
                     </button>
+                    <img src="../../assets/categories/current.svg" alt="current">
                 </div>
             </div>
         </div>
@@ -126,7 +130,9 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
             </div>
             <div class="meals">
                 <div class='meal'>
-                    <img src='../../assets/meals/5.svg' alt='meal_image' class='meal-image'>
+                    <a href="#">
+                        <img src='../../assets/meals/5.svg' alt='meal_image' class='meal-image'>
+                    </a>
                     <p class='meal-name'>Karl mucho</p>
                     <p class='meal-price'>¢67.00</p>
                     <p class='meal-desc'>Originating from the tribe of Ubuntu, this meal is the taste of....</p>

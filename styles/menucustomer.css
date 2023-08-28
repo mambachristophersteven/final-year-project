@@ -231,3 +231,172 @@ input[type = "submit"]{
 #logout{
     background: rgb(77, 72, 72);
 }
+
+.categories-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.categories-top{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.categories-heading{
+    font-family: poppinsBold;
+    font-size: 20px;
+    color: black;
+}
+
+.categories-top img{
+    width: 20px;
+}
+
+.category-images{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.category-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.category-images .current-category{
+    margin-bottom: 5px;
+}
+
+.category-images .current-category button{
+    border: 3px solid black;
+}
+
+.category-images .current-category > img{
+    display: flex;
+}
+
+.category-image > img{
+    display: none;
+}
+
+.category-image button{
+    /* padding: 5px; */
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: rgba(217, 217, 217, 1);
+    border-radius: 10px;
+}
+
+.category-image button img{
+    width: 45px;
+}
+
+.list-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.section-top{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.section-heading{
+    font-family: poppinsSemiBold;
+    font-size: 18px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.section-small{
+    font-family: poppinsSemiBold;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.meals{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 50px;
+}
+
+.meal{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+    gap: 5px;
+    width: 90%;
+    align-items: flex-end;
+}
+
+.meal img{
+    width: 120px;
+    position: absolute;
+    left: -10%;
+    top: -32%;
+}
+
+.meal-name{
+    font-family: poppinsBold;
+    font-size: 16px;
+    color: #000;
+    text-transform: capitalize;
+}
+
+.meal-price{
+    font-family: poppinsBold;
+    font-size: 15px;
+    color: #000;
+}
+
+.meal-desc{
+    font-family: poppinsSemiBold;
+    font-size: 10px;
+    text-align: right;
+    color: rgb(158, 158, 158);
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.buttons button{
+    background: transparent;
+    position: absolute;
+    right: 75%;
+    top: 30%;
+}
+
+.buttons img{
+    width: 20px;
+    position: inherit;
+}
+
+#liked{
+    display: none;
+}
