@@ -49,19 +49,71 @@ $ingredient4=$rowview['ingredient4'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/individualmeal.css">
+    <link rel="stylesheet" href="../..//styles/individualmea.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
     <div class="container">
-        <div class="top">
-            <img src="../../assets/icons/whiteBack.svg" alt="back">
-            <img src="../../assets/icons/cart.svg" alt="back">
-        </div>
-        <div class="image-like-quantity">
-            <img src="<?php echo $image;?>" alt="">
-            <div class="likes"></div>
-        </div>
+        <div class="form">
+            <form action="#">
+                <div class="top">
+                    <img src="../../assets/icons/whiteBack.svg" alt="back">
+                    <img src="../../assets/icons/cart.svg" alt="back">
+                </div>
+                <div class="image-like-quantity">
+                    <img src="<?php echo $image;?>" alt="">
+                    <div class="buttons">
+                        <button id="like" class="like-button">
+                            <img src="../../assets/icons/like.svg" alt="" >
+                        </button>
+                        <button id="liked" class="like-button">
+                            <img src="../../assets/icons/liked.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="quantity">
+                        <button id="decrease">
+                            <img src="../../assets/icons/remove.svg" alt="">
+                        </button>
+                        <input type="number" name="quantity" id="quantity">
+                        <button id="increase">
+                            <img src="../../assets/icons/add.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="meal-info">
+                    <div class="name-and-price">
+                        <p class="meal-name"><?php echo $name; ?></p>
+                        <p class="meal-price"><?php echo $price; ?></p>
+                    </div>
+                    <div class="description">
+                        <p class="description-heading">Description</p>
+                        <p class="meal-description"><?php echo $description;?></p>
+                    </div>
+                    <div class="ingredients">
+                        <p class="ingredient-heading">Description</p>
+                        <div class="ingredient-boxes">
+                            <div class="ingredient-box">
+                                <p><?php echo $ingredient1; ?></p>
+                            </div>
+                            <div class="ingredient-box">
+                                <p><?php echo $ingredient2; ?></p>
+                            </div>
+                            <div class="ingredient-box">
+                                <p><?php echo $ingredient3; ?></p>
+                            </div>
+                            <div class="ingredient-box">
+                                <p><?php echo $ingredient4; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <p class="total-heading">Total amount</p>
+                    <input type="number" id="total-amount" value="70.00">
+                </div>
+                <input type="submit" value="add to cart">
+            </form>
+        </div>       
     </div>
 
     <script src="../../interactivity/meal.js"></script>
