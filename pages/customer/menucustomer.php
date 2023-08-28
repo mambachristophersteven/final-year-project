@@ -129,22 +129,43 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 <p class="section-small">Explore all our meals and quisines</p>
             </div>
             <div class="meals">
-                <div class='meal'>
-                    <a href="#">
-                        <img src='../../assets/meals/5.svg' alt='meal_image' class='meal-image'>
-                    </a>
-                    <p class='meal-name'>Karl mucho</p>
-                    <p class='meal-price'>¢67.00</p>
-                    <p class='meal-desc'>Originating from the tribe of Ubuntu, this meal is the taste of....</p>
-                    <div class='buttons'>
-                        <button class="like-button">
-                            <img src="../../assets/icons/like.svg" alt="like button" id="like">
-                        </button>
-                        <button class="like-button">
-                            <img src="../../assets/icons/liked.svg" alt="like button" id="liked">
-                        </button>
-                    </div>
-                </div>
+                <?php
+                include '../../connection.php';
+                $sqlshow = "SELECT * FROM `meals` ORDER BY id ASC";
+                $resultshow = mysqli_query($con,$sqlshow);
+                $numshow = mysqli_num_rows($resultshow);
+                if($resultshow){
+                    while($rowshow = mysqli_fetch_assoc($resultshow)){
+                        $meal_name = $rowshow['name'];
+                        $meal_price = '¢'.$rowshow['price'].'.00';
+                        $meal_description = $rowshow['description'];
+                        $meal_category = $rowshow['category'];
+                        $meal_image = $rowshow['image'];
+
+                        echo "
+                        <div class='meal'>
+                            <a href='#'>
+                                <img src='$meal_image' alt='meal_image' class='meal-image'>
+                            </a>
+                            <p class='meal-name'>$meal_name</p>
+                            <p class='meal-price'>$meal_price</p>
+                            <p class='meal-desc'>$meal_description</p>
+                            <div class='buttons'>
+                                <button class='like-button'>
+                                    <img src='../../assets/icons/like.svg' alt='like button' id='like'>
+                                </button>
+                                <button class='like-button'>
+                                    <img src='../../assets/icons/liked.svg' alt='like button' id='liked'>
+                                </button>
+                            </div>
+                        </div>
+                        ";
+
+                    }
+                
+                }
+                ?>
+                
             </div>
         </div>
         <div class="menubar">
