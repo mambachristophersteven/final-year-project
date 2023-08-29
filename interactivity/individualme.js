@@ -33,10 +33,11 @@ likedButton.addEventListener('click', ()=>{
 // totalAmount = calculatedTotal;
 // console.log(totalAmount);
 
-let quantity = document.getElementById('quantity');
-let totalAmount = document.getElementById('total-amount');
-let userTotal = document.getElementById('user-total');
-let mealPrice = document.getElementById('meal-price').innerHTML;
+const quantity = document.getElementById('quantity');
+const totalAmount = document.getElementById('total-amount');
+const userTotal = document.getElementById('user-total');
+const mealPrice = document.getElementById('meal-price').innerHTML;
+const submitButton = document.getElementById('submit');
 //console.log(isNAN(mealPrice*quantity));
 
 
@@ -50,3 +51,39 @@ quantity.addEventListener('keyup', ()=>{
 })
 
 
+const form = document.getElementById('form');
+const listener = function(e){
+    console.log('submit clicked');
+    e.preventDefault();
+    checkInputs();
+}
+
+form.addEventListener('submit', listener);
+
+const checkInputs = function(){
+    const quantityValue = quantity.value.trim();
+
+    
+    
+    if(quantityValue === ''){
+        setErrorFor(quantity, 'Enter a password!');
+    }
+    else{
+        setSuccessFor(quantity);
+    }
+    if(quantityValue != ''){
+        submitButton.value = "Add to Cart"
+        submitButton.style.background = "black"
+        submitButton.style.color = "white"
+        //form.removeEventListener('submit', listener)
+    }
+}
+
+
+function setErrorFor(input, message){
+    input.style.border = "2px solid #e74c3c";
+}
+
+function setSuccessFor(input){
+    input.style.border = "2px solid #2ecc71";
+}

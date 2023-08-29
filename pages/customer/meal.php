@@ -55,7 +55,7 @@ $ingredient4=$rowview['ingredient4'];
 <body>
     <div class="container">
         <div class="form">
-            <form action="#">
+            <form action="./meal.php" id="form">
                 <div class="top">
                     <a href="./menucustomer.php">
                         <img src="../../assets/icons/whiteBack.svg" alt="back">
@@ -108,7 +108,7 @@ $ingredient4=$rowview['ingredient4'];
                         <p class="user-total">¢<span id="user-total">0</span>.00</p>
                     </div>
                 </div>
-                <input type="submit" value="add to cart">
+                <input type="submit" value="validate" id="submit">
             </form>
         </div>       
     </div>
