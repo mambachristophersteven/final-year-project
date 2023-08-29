@@ -137,6 +137,209 @@ input[type = "submit"]{
     margin-top: 5px;
 }
 
+.icon #cart-count{
+    color: white;
+    font-family: poppinsBold;
+    font-size: 11px;
+    position: absolute;
+    right: -25%;
+    top: -10%;
+}
+
+.best-selling-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 50px;
+}
+
+.top-section{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.section-title{
+    font-family: poppinsBold;
+    font-size: 20px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.section-small{
+    font-family: poppinsSemiBold;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.72);
+}
+
+.meal-box{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    height: 170px;
+    padding: 10px 20px 20px 20px;
+    gap: 5px;
+}
+
+.meal-box > a{
+    position: absolute;
+    right: -15%;
+    top: -40%;
+}
+
+.meal-box > a img{
+    width: 150px;
+}
+
+.meal-name{
+    font-family: poppinsBold;
+    font-size: 16px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.meal-price{
+    font-family: poppinsBold;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.88);
+    text-transform: capitalize;
+}
+
+.meal-description{
+    font-family: poppinsSemiBold;
+    font-size: 10px;
+    color: rgb(168, 168, 168);
+    width: 70%;
+}
+
+.button-and-heart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+
+.button-and-heart .order-button{
+    background: black;
+    color: #fff;
+    width: 116px;
+    height: 35px;
+    font-family: poppinsBold;
+    font-size: 14px;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+
+.like-button{
+    position: absolute;
+    right: 0;
+    background: transparent;
+}
+
+.like-button img{
+    width: 27px;
+}
+
+#liked{
+    display: none;
+}
+
+.recommended{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.meals{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recommended-meal{
+    width: 45%;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    margin-bottom: 30px;
+    height: 210px;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 20px;
+}
+
+
+.recommended-meal > a{
+    position: absolute;
+    right: -18%;
+    top: -20%;
+}
+
+.recommended-meal > a img{
+    width: 130px;
+}
+
+.button-only{
+    position: relative;
+}
+
+.button-only > button{
+    position: absolute;
+    background: transparent;
+}
+
+.button-only > button img{
+    width: 20px;
+}
+
+#rliked{
+    display: none;
+}
+
+.meal-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rmeal-name{
+    font-family: poppinsBold;
+    font-size: 14px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.rmeal-price{
+    font-family: poppinsBold;
+    font-size: 14px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.rmeal-description{
+    font-family: poppinsSemiBold;
+    font-size: 10px;
+    color: rgb(170, 170, 170);
+}
+
 .user-profile{
     width: 90%;
     height: 600px;
@@ -231,4 +434,8 @@ input[type = "submit"]{
 
 #logout{
     background: rgb(77, 72, 72);
+}
+
+.juo{
+    border: 2px solid red;
 }

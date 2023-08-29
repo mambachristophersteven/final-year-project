@@ -52,7 +52,7 @@ $ingredient4=$rowview['ingredient4'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/shoppingcart.css">
+    <link rel="stylesheet" href="../..//styles/shoppingcar.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
