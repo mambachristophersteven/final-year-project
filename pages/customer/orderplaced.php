@@ -40,7 +40,7 @@ $customer_id=$row['id'];
             <p class="signed">Order Placed!</p>
         </div>
         <div class="button-div">
-            <a href="./emptycart.php" class="button">
+            <a href="./menucustomer.php" class="button">
                 <button>Continue</button>
             </a>
         </div>

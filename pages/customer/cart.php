@@ -162,7 +162,7 @@ $sum = '¢'.$sumcart['SUM(cash_amount)'].'.00';
                     <p class="net-figure"><?php echo $sum;?></p>
                 </div>
                 <div class="button">
-                    <button onclick="location.href = 'orderplaced.php?'">Place Order</button>
+                    <button onclick="location.href = 'emptycart.php?removeid=<?php echo $customer_id; ?>'">Place Order</button>
                 </div>
             </div>       
         </div>
