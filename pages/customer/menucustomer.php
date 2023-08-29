@@ -182,8 +182,8 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                     <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/cart.svg" alt="cart"></a>
-                    <p id="cart-count">2</p>
+                    <a href="./cart.php"><img src="../../assets/icons/cart.svg" alt="cart"></a>
+                    <p id="cart-count">0</p>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>

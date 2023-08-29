@@ -149,7 +149,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                     <a href="./menucustomer.php"><img src="../../assets/icons/menu.svg" alt="menu"></a>
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/cart.svg" alt="cart"></a>
+                    <a href="./cart.php"><img src="../../assets/icons/cart.svg" alt="cart"></a>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>
