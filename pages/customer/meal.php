@@ -69,15 +69,15 @@ $ingredient4=$rowview['ingredient4'];
                         <img src="../../assets/icons/liked.svg" alt="" id="liked" class="like-button">
                     </div>
                     <div class="quantity">
-                        <img src="../../assets/icons/remove.svg" alt="">
-                        <input type="number" name="quantity" id="quantity" value="1" min="1">
-                        <img src="../../assets/icons/add.svg" alt="">
+                        <!-- <img src="../../assets/icons/remove.svg" alt="" id="reduce"> -->
+                        <input type="number" name="quantity" id="quantity" min="1" placeholder="1">
+                        <!-- <img src="../../assets/icons/add.svg" alt="" id="increase"> -->
                     </div>
                 </div>
                 <div class="meal-info">
                     <div class="name-and-price">
                         <p class="meal-name"><?php echo $name; ?></p>
-                        <p class="meal-price"><?php echo $price; ?></p>
+                        <p class="meal-price">¢<span id="meal-price"><?php echo $price; ?></span>.00</p>
                     </div>
                     <div class="description">
                         <p class="description-heading">Description</p>
@@ -103,13 +103,16 @@ $ingredient4=$rowview['ingredient4'];
                 </div>
                 <div class="total">
                     <p class="total-heading">Total amount</p>
-                    <input type="number" id="total-amount" value="455670.00" disabled>
+                    <div class="div">
+                        <input type="number" id="total-amount" disabled>
+                        <p class="user-total" id="user-total"></p>
+                    </div>
                 </div>
                 <input type="submit" value="add to cart">
             </form>
         </div>       
     </div>
 
-    <script src="../../interactivity/individualmea.js"></script>
+    <script src="../../interactivity/individualme.js"></script>
 </body>
 </html>
