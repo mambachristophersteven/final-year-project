@@ -53,7 +53,7 @@ $sqltotal = "SELECT SUM(cash_amount) from `cart`";
 $resulttotal = mysqli_query($con,$sqltotal);
 $sumcart = mysqli_fetch_assoc($resulttotal);
 
-$sum = $sumcart['SUM(cash_amount)'];
+$sum = '¢'.$sumcart['SUM(cash_amount)'].'.00';
 //echo $sum;
 
 // $rowtotal = mysqli_num_rows($resulttotal);
@@ -153,12 +153,12 @@ $sum = $sumcart['SUM(cash_amount)'];
                  <div class="totals">
                     <div class="total-meal-amount">
                         <p class="amount-text">Total amount</p>
-                        <p class="amount-figure">¢985.00</p>
+                        <p class="amount-figure"><?php echo $sum;?></p>
                     </div>
-                    <div class="vat">
+                    <!-- <div class="vat">
                         <p class="vat-text">vat</p>
                         <p class="vat-figure">¢12.00</p>
-                    </div>
+                    </div> -->
                     <div class="net">
                         <p class="net-text">net amount</p>
                         <p class="net-figure"><?php echo $sum;?></p>
