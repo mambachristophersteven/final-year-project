@@ -6,6 +6,8 @@ if(!isset($_SESSION['username'])){
     header("location: ../index.php");
 }
 
+$currentDate = date('Y-m-d'); 
+
 $username= $_SESSION['username'];
 $sql= "SELECT * FROM `users` WHERE username= '$username'";
 $result= mysqli_query($con,$sql);
@@ -13,6 +15,7 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $email=$row['email'];
 $date_joined=$row['date_joined'];
+$customer_id=$row['id'];
 
 $sqlmeals = "SELECT * FROM `meals`";
 $resultmeals = mysqli_query($con,$sqlmeals);
@@ -30,6 +33,7 @@ $sqlview= "SELECT * from `meals` WHERE id=$id";
 $resultview=mysqli_query($con,$sqlview);
 $rowview=mysqli_fetch_assoc($resultview);
 
+$id=$rowview['id'];
 $name=$rowview['name'];
 $price=$rowview['price'];
 $image=$rowview['image'];
@@ -38,6 +42,30 @@ $ingredient1=$rowview['ingredient1'];
 $ingredient2=$rowview['ingredient2'];
 $ingredient3=$rowview['ingredient3'];
 $ingredient4=$rowview['ingredient4'];
+
+if(isset($_POST['submit'])){
+    $quantity = $_POST['quantity'];
+    $totalAmount = $quantity*$price;
+    //echo $quantity;
+    
+    if(empty($quantity)){
+        $quantity = 1;
+    }
+    else{
+        $sqlinsert= "INSERT INTO `cart` (meal_id,customer_id,quantity,cash_amount,date_ordered) VALUES ('$id','$customer_id','$quantity','$totalAmount','$currentDate')";
+        $result= mysqli_query($con, $sqlinsert);
+        if($result){
+            header("location: ./menucustomer.php");
+        }
+        else{
+            die("error occurred: ".mysqli_error($con));
+        }
+        
+    }
+            
+    
+}
+
 
 
 
@@ -55,7 +83,7 @@ $ingredient4=$rowview['ingredient4'];
 <body>
     <div class="container">
         <div class="form">
-            <form action="./meal.php" id="form">
+            <form action="" id="form" method="post">
                 <div class="top">
                     <a href="./menucustomer.php">
                         <img src="../../assets/icons/whiteBack.svg" alt="back">
@@ -104,11 +132,11 @@ $ingredient4=$rowview['ingredient4'];
                 <div class="total">
                     <p class="total-heading">Total amount</p>
                     <div class="totals">
-                        <input type="number" id="total-amount" disabled>
+                        <input type="number" id="total-amount" name="total-amount" disabled>
                         <p class="user-total">¢<span id="user-total">0</span>.00</p>
                     </div>
                 </div>
-                <input type="submit" value="validate" id="submit">
+                <input type="submit" value="validate" id="submit" name="submit">
             </form>
         </div>       
     </div>

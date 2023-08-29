@@ -75,7 +75,7 @@ const checkInputs = function(){
         submitButton.value = "Add to Cart"
         submitButton.style.background = "black"
         submitButton.style.color = "white"
-        //form.removeEventListener('submit', listener)
+        form.removeEventListener('submit', listener)
     }
 }
 
