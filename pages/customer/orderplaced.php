@@ -25,9 +25,25 @@ $customer_id=$row['id'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/signed.css">
+    <title>Winkies - Customer</title>
 </head>
 <body>
-    
-</body>
+    <div class="container">
+        <div class="top">
+            <img src="../../assets/images/logo-light.png" alt="logo">
+        </div>
+        <div class="message">
+            <img src="../../assets/icons/checkmark.svg" alt="check">
+            <p class="signed">Order Placed!</p>
+        </div>
+        <div class="button-div">
+            <a href="./menucustomer.php" class="button">
+                <button>Continue</button>
+            </a>
+        </div>
+        
+    </div>
 </html>
