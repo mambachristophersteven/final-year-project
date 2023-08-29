@@ -48,6 +48,19 @@ $nummcart = mysqli_num_rows($resultcart);
 
 
 
+
+$sqltotal = "SELECT SUM(cash_amount) from `cart`";
+$resulttotal = mysqli_query($con,$sqltotal);
+$sumcart = mysqli_fetch_assoc($resulttotal);
+
+$sum = $sumcart['SUM(cash_amount)'];
+//echo $sum;
+
+// $rowtotal = mysqli_num_rows($resulttotal);
+// $net_total = $rowtotal;
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +69,7 @@ $nummcart = mysqli_num_rows($resultcart);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/shoppingcar.css">
+    <link rel="stylesheet" href="../..//styles/shoppingc.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
@@ -104,34 +117,30 @@ $nummcart = mysqli_num_rows($resultcart);
                 <div class="meals">
                     <?php 
                         include '../../connection.php';
-                        $sqlshow = "SELECT * FROM `meals` ORDER BY id ASC";
+                        $sqlshow = "SELECT * FROM `cart` WHERE customer_id = '$customer_id' ORDER BY id DESC";
                         $resultshow = mysqli_query($con,$sqlshow);
-                        $numshow = mysqli_num_rows($resultshow);
+                        //$numshow = mysqli_num_rows($resultshow);
                         if($resultshow){
                             while($rowshow = mysqli_fetch_assoc($resultshow)){
-                                $meal_name = $rowshow['name'];
+                                $meal_name = $rowshow['meal_name'];
                                 $id = $rowshow['id'];
-                                $meal_price = '¢'.$rowshow['price'].'.00';
-                                $meal_description = $rowshow['description'];
-                                $meal_category = $rowshow['category'];
-                                $meal_image = $rowshow['image'];
+                                $meal_price = '¢'.$rowshow['meal_price'].'.00';
+                                $cash_amount = '¢'.$rowshow['cash_amount'].'.00';
+                                $meal_quantity = $rowshow['quantity'];
+                                $meal_image = $rowshow['meal_image'];
         
                                 echo "
                                 <div class='meal'>
-                                    <a href='./meal.php?viewid=$id'>
-                                        <img src='$meal_image' alt='meal_image' class='meal-image'>
-                                    </a>
+                                    <img src='$meal_image' alt='menu'>
                                     <p class='meal-name'>$meal_name</p>
                                     <p class='meal-price'>$meal_price</p>
-                                    <p class='meal-desc'>$meal_description</p>
-                                    <div class='buttons'>
-                                        <button class='like-button'>
-                                            <img src='../../assets/icons/like.svg' alt='like button' id='like'>
+                                    <input type='number' name='quantity' id='quantity' min='1' value='$meal_quantity' disabled>
+                                    <div class='total-close'>
+                                        <button>
+                                            <img src='../../assets/icons/close.svg' alt='' id='close'>
                                         </button>
-                                        <button class='like-button'>
-                                            <img src='../../assets/icons/liked.svg' alt='like button' id='liked'>
-                                        </button>
-                                    </div>
+                                        <p class='meal-total' id='meal-total'>$cash_amount</p>
+                                    </div>                                   
                                 </div>
                                 ";
         
@@ -141,6 +150,23 @@ $nummcart = mysqli_num_rows($resultcart);
                     
                     ?>
                 </div>
+                 <div class="totals">
+                    <div class="total-meal-amount">
+                        <p class="amount-text">Total amount</p>
+                        <p class="amount-figure">¢985.00</p>
+                    </div>
+                    <div class="vat">
+                        <p class="vat-text">vat</p>
+                        <p class="vat-figure">¢12.00</p>
+                    </div>
+                    <div class="net">
+                        <p class="net-text">net amount</p>
+                        <p class="net-figure"><?php echo $sum;?></p>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Place Order" name='submit'>
+                    </div>
+                 </div>       
             </form>
         </div>
         <div class="menubar">
