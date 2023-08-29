@@ -42,6 +42,10 @@ $ingredient2=$rowview['ingredient2'];
 $ingredient3=$rowview['ingredient3'];
 $ingredient4=$rowview['ingredient4'];
 
+$sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id'";
+$resultcart = mysqli_query($con,$sqlcart);
+$nummcart = mysqli_num_rows($resultcart);
+
 
 
 ?>
@@ -94,6 +98,51 @@ $ingredient4=$rowview['ingredient4'];
                 </a>
             </div>
         </div>
+        <p class="page-title">Orders</p>
+        <div class="cart">
+            <form action="#" method="post" enctype="multipart/form-data" id="form">
+                <div class="meals">
+                    <?php 
+                        include '../../connection.php';
+                        $sqlshow = "SELECT * FROM `meals` ORDER BY id ASC";
+                        $resultshow = mysqli_query($con,$sqlshow);
+                        $numshow = mysqli_num_rows($resultshow);
+                        if($resultshow){
+                            while($rowshow = mysqli_fetch_assoc($resultshow)){
+                                $meal_name = $rowshow['name'];
+                                $id = $rowshow['id'];
+                                $meal_price = '¢'.$rowshow['price'].'.00';
+                                $meal_description = $rowshow['description'];
+                                $meal_category = $rowshow['category'];
+                                $meal_image = $rowshow['image'];
+        
+                                echo "
+                                <div class='meal'>
+                                    <a href='./meal.php?viewid=$id'>
+                                        <img src='$meal_image' alt='meal_image' class='meal-image'>
+                                    </a>
+                                    <p class='meal-name'>$meal_name</p>
+                                    <p class='meal-price'>$meal_price</p>
+                                    <p class='meal-desc'>$meal_description</p>
+                                    <div class='buttons'>
+                                        <button class='like-button'>
+                                            <img src='../../assets/icons/like.svg' alt='like button' id='like'>
+                                        </button>
+                                        <button class='like-button'>
+                                            <img src='../../assets/icons/liked.svg' alt='like button' id='liked'>
+                                        </button>
+                                    </div>
+                                </div>
+                                ";
+        
+                            }
+                        
+                        }
+                    
+                    ?>
+                </div>
+            </form>
+        </div>
         <div class="menubar">
             <div class="menu-icons">
                 <div class="icon">
@@ -108,7 +157,7 @@ $ingredient4=$rowview['ingredient4'];
                 <div class="icon" class="active-page">
                     <a href="./cart.php"><img src="../../assets/icons/cart.svg" alt="cart"></a>
                     <img src="../../assets/icons/active.svg" alt="current page">
-                    <p id="cart-count">2</p>
+                    <p id="cart-count"><?php echo $nummcart;?></p>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>

@@ -13,6 +13,8 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $email=$row['email'];
 $date_joined=$row['date_joined'];
+$customer_id=$row['id'];
+
 
 $sqlmeals = "SELECT * FROM `meals`";
 $resultmeals = mysqli_query($con,$sqlmeals);
@@ -23,6 +25,10 @@ $sqlmeals_on_menu = "SELECT * FROM `meals` WHERE on_menu = 'true'";
 $resultmeals_on_menu = mysqli_query($con,$sqlmeals_on_menu);
 $numsmeals_on_menu = mysqli_num_rows($resultmeals_on_menu);
 $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
+
+$sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id'";
+$resultcart = mysqli_query($con,$sqlcart);
+$nummcart = mysqli_num_rows($resultcart);
 
 
 ?>
@@ -183,7 +189,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 </div>
                 <div class="icon">
                     <a href="./cart.php"><img src="../../assets/icons/cart.svg" alt="cart"></a>
-                    <p id="cart-count">0</p>
+                    <p id="cart-count"><?php echo $nummcart;?></p>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>
