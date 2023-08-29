@@ -34,7 +34,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/customerho.css">
+    <link rel="stylesheet" href="../..//styles/customerh.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
@@ -150,6 +150,7 @@ $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
                 </div>
                 <div class="icon">
                     <a href="./cart.php"><img src="../../assets/icons/cart.svg" alt="cart"></a>
+                    <p id="cart-count">2</p>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/notification.svg" alt="notification"></a>

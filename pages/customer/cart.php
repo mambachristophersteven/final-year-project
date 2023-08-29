@@ -1,3 +1,50 @@
+<?php
+
+include '../../connection.php'; 
+session_start();
+if(!isset($_SESSION['username'])){
+    header("location: ../index.php");
+}
+
+$currentDate = date('Y-m-d'); 
+
+$username= $_SESSION['username'];
+$sql= "SELECT * FROM `users` WHERE username= '$username'";
+$result= mysqli_query($con,$sql);
+$nums= mysqli_num_rows($result);
+$row= mysqli_fetch_assoc($result);
+$email=$row['email'];
+$date_joined=$row['date_joined'];
+$customer_id=$row['id'];
+
+$sqlmeals = "SELECT * FROM `meals`";
+$resultmeals = mysqli_query($con,$sqlmeals);
+$numsmeals = mysqli_num_rows($resultmeals);
+$rowmeals = mysqli_fetch_assoc($resultmeals);
+
+$sqlmeals_on_menu = "SELECT * FROM `meals` WHERE on_menu = 'true'";
+$resultmeals_on_menu = mysqli_query($con,$sqlmeals_on_menu);
+$numsmeals_on_menu = mysqli_num_rows($resultmeals_on_menu);
+$rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
+
+
+$sqlview= "SELECT * from `meals`";
+$resultview=mysqli_query($con,$sqlview);
+$rowview=mysqli_fetch_assoc($resultview);
+
+$id=$rowview['id'];
+$name=$rowview['name'];
+$price=$rowview['price'];
+$image=$rowview['image'];
+$description=$rowview['description'];
+$ingredient1=$rowview['ingredient1'];
+$ingredient2=$rowview['ingredient2'];
+$ingredient3=$rowview['ingredient3'];
+$ingredient4=$rowview['ingredient4'];
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,15 +64,6 @@
         <div class="welcome">
             <p class="name">Hello, <?php echo $username; ?>.</p>
             <p class="motivation">Get down to ordering something, anything.</p>
-        </div>
-        <div class="search">
-            <form action="#">
-                <div class="input">
-                    <input type="text" name="search" id="search" placeholder="search all meals">
-                    <img src="../../assets/icons/search.svg" alt="">
-                </div>
-                <input type="submit" value="search" name="search" id="searchButton">
-            </form>
         </div>
         <div class="user-profile" id="user-profile-box">
             <img src="../../assets/icons/close.svg" alt="" id="close">
