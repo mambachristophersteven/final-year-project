@@ -49,7 +49,7 @@ $ingredient4=$rowview['ingredient4'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../..//styles/individualmea.css">
+    <link rel="stylesheet" href="../..//styles/individualme.css">
     <title>Winkies - Customer</title>
 </head>
 <body>
@@ -103,9 +103,9 @@ $ingredient4=$rowview['ingredient4'];
                 </div>
                 <div class="total">
                     <p class="total-heading">Total amount</p>
-                    <div class="div">
+                    <div class="totals">
                         <input type="number" id="total-amount" disabled>
-                        <p class="user-total" id="user-total"></p>
+                        <p class="user-total">¢<span id="user-total">0</span>.00</p>
                     </div>
                 </div>
                 <input type="submit" value="add to cart">

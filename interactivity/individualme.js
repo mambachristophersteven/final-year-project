@@ -42,6 +42,11 @@ let mealPrice = document.getElementById('meal-price').innerHTML;
 
 quantity.addEventListener('keyup', ()=>{
     //let calcu = Number(quantity);
-    userTotal.innerHTML = quantity.value*mealPrice;
-    //mealPrice.innerHTML = mealPrice*quantity;
+    let totalAmountValue = totalAmount.value.trim();
+    let calcu =  quantity.value*mealPrice
+    userTotal.innerHTML = calcu;
+    totalAmountValue = calcu;
+    console.log(totalAmountValue);
 })
+
+
