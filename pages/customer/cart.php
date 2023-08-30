@@ -8,7 +8,10 @@ if(!isset($_SESSION['username'])){
 
 $currentDate = date('Y-m-d'); 
 $currentTime = date('h:i:s'); 
-echo $currentTime;
+
+$currentDateTime = date('Y-m-d h:i:s'); 
+
+//echo $currentDateTime;
 
 $username= $_SESSION['username'];
 $sql= "SELECT * FROM `users` WHERE username= '$username'";
