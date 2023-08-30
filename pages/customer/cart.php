@@ -7,6 +7,8 @@ if(!isset($_SESSION['username'])){
 }
 
 $currentDate = date('Y-m-d'); 
+$currentTime = date('h:i:s'); 
+echo $currentTime;
 
 $username= $_SESSION['username'];
 $sql= "SELECT * FROM `users` WHERE username= '$username'";
@@ -45,8 +47,6 @@ $ingredient4=$rowview['ingredient4'];
 $sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id'";
 $resultcart = mysqli_query($con,$sqlcart);
 $nummcart = mysqli_num_rows($resultcart);
-
-
 
 
 $sqltotal = "SELECT SUM(cash_amount) from `cart`";
@@ -112,7 +112,6 @@ $sum = '¢'.$sumcart['SUM(cash_amount)'].'.00';
             </div>
         </div>
         <p class="page-title">Orders</p>
-        <form action="#" method="post" enctype="multipart/form-data">
             <div class="cart">
                 <div class="meals">
                     <?php 
@@ -167,7 +166,6 @@ $sum = '¢'.$sumcart['SUM(cash_amount)'].'.00';
                     </div>
                 </div>       
             </div>
-        </form>
         
         <div class="menubar">
             <div class="menu-icons">

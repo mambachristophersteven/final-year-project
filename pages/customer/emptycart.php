@@ -8,6 +8,8 @@ if(!isset($_SESSION['username'])){
 
 $customer_id = $_GET['removeid'];
 
+$sqlupdate = "UPDATE `cart` SET order_time = '$currentDateTime' WHERE customer_id=$customer_id";
+
 $sql="DELETE FROM `cart` WHERE customer_id=$customer_id";
 $result=mysqli_query($con,$sql);
 if($result){
