@@ -112,60 +112,63 @@ $sum = '¢'.$sumcart['SUM(cash_amount)'].'.00';
             </div>
         </div>
         <p class="page-title">Orders</p>
-        <div class="cart">
-            <div class="meals">
-                <?php 
-                    include '../../connection.php';
-                    $sqlshow = "SELECT * FROM `cart` WHERE customer_id = '$customer_id' ORDER BY id DESC";
-                    $resultshow = mysqli_query($con,$sqlshow);
-                    //$numshow = mysqli_num_rows($resultshow);
-                    if($resultshow){
-                        while($rowshow = mysqli_fetch_assoc($resultshow)){
-                            $meal_name = $rowshow['meal_name'];
-                            $id = $rowshow['id'];
-                            $meal_price = '¢'.$rowshow['meal_price'].'.00';
-                            $cash_amount = '¢'.$rowshow['cash_amount'].'.00';
-                            $meal_quantity = $rowshow['quantity'];
-                            $meal_image = $rowshow['meal_image'];
-    
-                            echo "
-                            <div class='meal'>
-                                <img src='$meal_image' alt='menu'>
-                                <p class='meal-name'>$meal_name</p>
-                                <p class='meal-price'>$meal_price</p>
-                                <input type='number' name='quantity' id='quantity' min='1' value='$meal_quantity' disabled>
-                                <div class='total-close'>
-                                    <button id='view'  onclick=\"location.href = 'removeorder.php?removeid=".$id."'\">
-                                        <img src='../../assets/icons/close.svg' alt='' id='close'>
-                                    </button>
-                                    <p class='meal-total' id='meal-total'>$cash_amount</p>
-                                </div>                                   
-                            </div>
-                            ";
-    
-                        }
-                    
-                    }             
-                ?>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <div class="cart">
+                <div class="meals">
+                    <?php 
+                        include '../../connection.php';
+                        $sqlshow = "SELECT * FROM `cart` WHERE customer_id = '$customer_id' ORDER BY id DESC";
+                        $resultshow = mysqli_query($con,$sqlshow);
+                        //$numshow = mysqli_num_rows($resultshow);
+                        if($resultshow){
+                            while($rowshow = mysqli_fetch_assoc($resultshow)){
+                                $meal_name = $rowshow['meal_name'];
+                                $id = $rowshow['id'];
+                                $meal_price = '¢'.$rowshow['meal_price'].'.00';
+                                $cash_amount = '¢'.$rowshow['cash_amount'].'.00';
+                                $meal_quantity = $rowshow['quantity'];
+                                $meal_image = $rowshow['meal_image'];
+        
+                                echo "
+                                <div class='meal'>
+                                    <img src='$meal_image' alt='menu'>
+                                    <p class='meal-name'>$meal_name</p>
+                                    <p class='meal-price'>$meal_price</p>
+                                    <input type='number' name='quantity' id='quantity' min='1' value='$meal_quantity' disabled>
+                                    <div class='total-close'>
+                                        <button id='view'  onclick=\"location.href = 'removeorder.php?removeid=".$id."'\">
+                                            <img src='../../assets/icons/close.svg' alt='' id='close'>
+                                        </button>
+                                        <p class='meal-total' id='meal-total'>$cash_amount</p>
+                                    </div>                                   
+                                </div>
+                                ";
+        
+                            }
+                        
+                        }             
+                    ?>
+                </div>
+                    <div class="totals">
+                    <div class="total-meal-amount">
+                        <p class="amount-text">Total amount</p>
+                        <p class="amount-figure"><?php echo $sum;?></p>
+                    </div>
+                    <!-- <div class="vat">
+                        <p class="vat-text">vat</p>
+                        <p class="vat-figure">¢12.00</p>
+                    </div> -->
+                    <div class="net">
+                        <p class="net-text">net amount</p>
+                        <p class="net-figure"><?php echo $sum;?></p>
+                    </div>
+                    <div class="button">
+                        <button onclick="location.href = 'emptycart.php?removeid=<?php echo $customer_id; ?>'">Place Order</button>
+                    </div>
+                </div>       
             </div>
-                <div class="totals">
-                <div class="total-meal-amount">
-                    <p class="amount-text">Total amount</p>
-                    <p class="amount-figure"><?php echo $sum;?></p>
-                </div>
-                <!-- <div class="vat">
-                    <p class="vat-text">vat</p>
-                    <p class="vat-figure">¢12.00</p>
-                </div> -->
-                <div class="net">
-                    <p class="net-text">net amount</p>
-                    <p class="net-figure"><?php echo $sum;?></p>
-                </div>
-                <div class="button">
-                    <button onclick="location.href = 'emptycart.php?removeid=<?php echo $customer_id; ?>'">Place Order</button>
-                </div>
-            </div>       
-        </div>
+        </form>
+        
         <div class="menubar">
             <div class="menu-icons">
                 <div class="icon">
