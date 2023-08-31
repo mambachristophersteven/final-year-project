@@ -18,7 +18,21 @@ $resultmeals = mysqli_query($con,$sqlmeals);
 $numsmeals = mysqli_num_rows($resultmeals);
 $rowmeals = mysqli_fetch_assoc($resultmeals);
 
+$sqlorder ="SELECT id, customer_id, order_time, COUNT(customer_id) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
+$resultorder= mysqli_query($con,$sqlorder);
+$roworder= mysqli_fetch_assoc($resultorder);
+$numOfOrders= mysqli_num_rows($resultorder)-1;
 
+
+$sqlchef= "SELECT * FROM `users` WHERE role= 'Chef'";
+$resultchef= mysqli_query($con,$sqlchef);
+$numschef= mysqli_num_rows($resultchef);
+$row= mysqli_fetch_assoc($resultchef);
+
+$sqlcustomer= "SELECT * FROM `users` WHERE role= 'Customer'";
+$resultcustomer= mysqli_query($con,$sqlcustomer);
+$numscustomer= mysqli_num_rows($resultcustomer);
+$row= mysqli_fetch_assoc($resultcustomer);
 
 ?>
 <!DOCTYPE html>
@@ -27,6 +41,7 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winkies-Admin</title>
+    <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
     <link rel="stylesheet" href="../../styles/adminhomepage.css">
 </head>
@@ -56,68 +71,77 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
             </div>
             <div class="box">
                 <div class="up">
-                    <p class="number">0</p>
+                    <p class="number"><?php echo $numOfOrders; ?></p>
                     <img src="../../assets/icons/newOrdersBlack.svg" alt="current">
                 </div>
                 <div class="middle">
                     <p class="box-name">New Orders</p>
                 </div>
                 <div class="down">
-                    <p class="summary">Total number of food meals we have in our menu currently.</p>
-                </div>
-            </div>
-            <!-- <div class="box">
-                <div class="up">
-                    <p class="number">120</p>
-                    <img src="../../assets/icons/current.svg" alt="current">
-                </div>
-                <div class="middle">
-                    <p class="box-name">Current meals</p>
-                </div>
-                <div class="down">
-                    <p class="summary">Total number of food meals we have in our menu currently.</p>
+                    <p class="summary">Total number of orders that just came through.</p>
                 </div>
             </div>
             <div class="box">
                 <div class="up">
-                    <p class="number">120</p>
+                    <p class="number"><?php echo $numschef;?></p>
                     <img src="../../assets/icons/current.svg" alt="current">
                 </div>
                 <div class="middle">
-                    <p class="box-name">Current meals</p>
+                    <p class="box-name">Chefs</p>
                 </div>
                 <div class="down">
-                    <p class="summary">Total number of food meals we have in our menu currently.</p>
+                    <p class="summary">Total number of chefs we have in our restaurant.</p>
                 </div>
-            </div> -->
+            </div>
+            <div class="box">
+                <div class="up">
+                    <p class="number"><?php echo $numscustomer;?></p>
+                    <img src="../../assets/icons/current.svg" alt="current">
+                </div>
+                <div class="middle">
+                    <p class="box-name">Customers</p>
+                </div>
+                <div class="down">
+                    <p class="summary">Total number of customers registered</p>
+                </div>
+            </div>
         </div>
         <div class="new-Orders">
             <div class="heading">
-                <p class="section-title">New orders list</p>
-                <p class="section-info">Total number of orders received and awaiting processing.</p>
+                <p class="section-title">Receently Added Customers.</p>
+                <p class="section-info">Newly signed up customers, quick view.</p>
             </div>
             <table>
                 <thead>
                     <th>no.</th>
-                    <th>image</th>
-                    <th>name</th>
-                    <th>price</th>
-                    <th>orders</th>
+                    <th>username</th>
+                    <th>email</th>
+                    <th>date</th>
                 </thead>
-                <tr>
-                    <td><p class="meal-ranking">1</p></td>
-                    <td><img src="../../assets/meals/1.svg" alt="meal-image"></td>
-                    <td><p class="meal-name">Sweet Sweet benji</p></td>
-                    <td><p class="meal-price">¢95.00</p></td>
-                    <td><p class="meal-orders">33</p></td>
-                </tr>
-                <tr>
-                    <td><p class="meal-ranking">1</p></td>
-                    <td><img src="../../assets/meals/1.svg" alt="meal-image"></td>
-                    <td><p class="meal-name">Sweet Sweet benji</p></td>
-                    <td><p class="meal-price">¢95.00</p></td>
-                    <td><p class="meal-orders">33</p></td>
-                </tr>
+                <?php
+                    $sqlshow ="SELECT * FROM `users` WHERE role = 'Customer'";
+                    $resultshow= mysqli_query($con,$sqlshow);
+                    //$rowshow= mysqli_fetch_assoc($resultshow);
+                    $number = 0;
+                    if($resultshow){
+                        while($rowshow = mysqli_fetch_assoc($resultshow)){
+                            $number++;
+                            $customer_username = $rowshow['username'];
+                            $customer_email = $rowshow['email'];
+                            $customer_date = $rowshow['date_joined'];
+                        }
+                        echo "
+                            <tr>
+                                <td><p class='meal-ranking'>$number</p></td>
+                                <td><p class='meal-name'>$customer_username</p></td>
+                                <td><p class='meal-price'>$customer_email</p></td>
+                                <td><p class='meal-orders'>$customer_date</p></td>
+                            </tr>
+                        
+                        ";
+                    }
+                
+                ?>
             </table>
         </div>
         <div class="menubar">
@@ -127,16 +151,13 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
                     <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
-                    <a href="./orderschef.php"><img src="../../assets/icons/new.svg" alt="orders"></a>
+                    <a href="./homeadmin.php"><img src="../../assets/icons/new.svg" alt="orders"></a>
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/pending.svg" alt="pending orders"></a>
+                    <a href="#"><img src="../../assets/icons/person.svg" alt="pending orders"></a>
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/meals.svg" alt="meals"></a>
-                </div>
-                <div class="icon">
-                    <a href="#"><img src="../../assets/icons/checkmark-done.svg" alt="completed"></a>
+                    <a href="#"><img src="../../assets/icons/person-add.svg" alt="meals"></a>
                 </div>
                 <div class="icon">
                     <a href="./customization.php"><img src="../../assets/icons/settings.svg" alt="settings"></a>
