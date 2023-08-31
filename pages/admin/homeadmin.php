@@ -28,6 +28,7 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Winkies-Admin</title>
     <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="stylesheet" href="../../styles/adminhomepage.css">
 </head>
 <body>
 <div class="container">
@@ -37,7 +38,7 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
         </div>
         <div class="welcome">
             <p class="name">Hello, Admin <?php echo $username; ?>.</p>
-            <p class="motivation">Let’s get to business, shall we?</p>
+            <p class="motivation">Check and know what ever is happening.</p>
         </div>
         <p class="page">Overview</p>
         <div class="boxes">
@@ -95,6 +96,29 @@ $rowmeals = mysqli_fetch_assoc($resultmeals);
                 <p class="section-title">New orders list</p>
                 <p class="section-info">Total number of orders received and awaiting processing.</p>
             </div>
+            <table>
+                <thead>
+                    <th>no.</th>
+                    <th>image</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>orders</th>
+                </thead>
+                <tr>
+                    <td><p class="meal-ranking">1</p></td>
+                    <td><img src="../../assets/meals/1.svg" alt="meal-image"></td>
+                    <td><p class="meal-name">Sweet Sweet benji</p></td>
+                    <td><p class="meal-price">¢95.00</p></td>
+                    <td><p class="meal-orders">33</p></td>
+                </tr>
+                <tr>
+                    <td><p class="meal-ranking">1</p></td>
+                    <td><img src="../../assets/meals/1.svg" alt="meal-image"></td>
+                    <td><p class="meal-name">Sweet Sweet benji</p></td>
+                    <td><p class="meal-price">¢95.00</p></td>
+                    <td><p class="meal-orders">33</p></td>
+                </tr>
+            </table>
         </div>
         <div class="menubar">
             <div class="menu-icons">
