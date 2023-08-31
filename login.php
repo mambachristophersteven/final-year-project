@@ -37,6 +37,11 @@ if(isset($_POST['submit'])){
                     $_SESSION['username']= $username;
                     header('location: ./pages/chef/homechef.php');
                 }
+                if($position==="Admin"){
+                    session_start();
+                    $_SESSION['username']= $username;
+                    header('location: ./pages/admin/homeadmin.php');
+                }
             }          
             else{
                 $error= "Invalid Login Credentials";

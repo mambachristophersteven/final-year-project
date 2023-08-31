@@ -24,10 +24,10 @@
                 <button>Get Started</button>
             </a>
         </div>
-        <div class="power">
+        <!-- <div class="power">
             <img src="./assets/images/mamba.png" alt="">
             <p class="developer">powered by mambalev</p>
-        </div>
+        </div> -->
     </div>
     
 </body>
