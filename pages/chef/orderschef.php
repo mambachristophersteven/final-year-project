@@ -20,25 +20,7 @@ $numOfOrders= mysqli_num_rows($resultorder)-1;
 //$numofOrders = $roworder['HowMany'];
 
 
-// $sqlorder ="SELECT id, customer_id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
-//                     $resultorder= mysqli_query($con,$sqlorder);
-//                     $roworder= mysqli_fetch_assoc($resultorder);
-//                     $number = 0;
-//                     if($resultorder){
-//                         while($roworder = mysqli_fetch_assoc($resultorder)){
-//                             $number++;
-//                             $time = $roworder['order_time'];
-//                             echo "
-//                                 <tr>
-//                                     <td><p class='order-number'>order #$number</p></td>
-//                                     <td><p class='order-arrival'>$time</p></td>
-//                                     <td><button>view</button></td>
-//                                 </tr>
-//                             ";
-//                         }
-                        
-                        
-//                     }
+
 
 
 ?>
@@ -50,7 +32,7 @@ $numOfOrders= mysqli_num_rows($resultorder)-1;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="52x52" href="../../assets/images/meta-logo-black.png">
     <link rel="stylesheet" href="../../styles/global.css">
-    <link rel="stylesheet" href="../../styles/ordersc.css">
+    <link rel="stylesheet" href="../../styles/orders.css">
     <title>Winkies - Chef</title>
 </head>
 <body>
@@ -84,20 +66,44 @@ $numOfOrders= mysqli_num_rows($resultorder)-1;
                 <p class="section-info">Total number of orders received and awaiting processing.</p>
             </div>
             <div class="orders-boxes">
-                <div class="order-box">
-                    <div class="order-top">
-                        <p class="order-number">Order #2</p>
-                        <p class="order-time">2023-08-31 05:00:06</p>
-                    </div>
-                    <div class="order-meals">
-                        <img src="../../assets/meals/5.svg" alt="meal-image">
-                        <p class="meal-name">The hot kube</p>
-                        <div class="meal-quantity">
-                            <p class="price">¢40.00</p>
-                            <p class="quantity">Qty:2</p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                    $sqlorder ="SELECT customer_id, order_time, meal_name,meal_image,meal_price,quantity, SUM(meal_price) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
+                    $resultorder= mysqli_query($con,$sqlorder);
+                    $roworder= mysqli_fetch_assoc($resultorder);
+                    $number = 0;
+                    if($resultorder){
+                        while($roworder = mysqli_fetch_assoc($resultorder)){
+                            $number++;
+                            $time = $roworder['order_time'];
+                            $meal_name = $roworder['meal_name'];
+                            $meal_image = $roworder['meal_image'];
+                            $meal_price = $roworder['meal_price'];
+                            $meal_quantity = $roworder['quantity'];
+
+                            echo "
+                                <div class='order-box'>
+                                    <div class='order-top'>
+                                        <p class='order-number'>Order #$number</p>
+                                        <p class='order-time'>$time</p>
+                                    </div>
+                                    <div class='order-meals'>
+                                        <img src='$meal_image' alt='meal-image'>
+                                        <p class='meal-name'>$meal_name</p>
+                                        <div class='meal-quantity'>
+                                            <p class='price'>¢$meal_price.00</p>
+                                            <p class='quantity'>Qty:$meal_quantity</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            ";
+                        }
+                        
+                        
+                    }
+                
+                
+                ?>
             </div>
         </div>
         <div class="menubar">
