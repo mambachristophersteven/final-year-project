@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
         $quantity = 1;
     }
     else{
-        $sqlinsert= "INSERT INTO `cart` (meal_id,customer_id,quantity,cash_amount,date_ordered,meal_price,meal_name,meal_image) VALUES ('$id','$customer_id','$quantity','$totalAmount','$currentDate','$price','$name','$image')";
+        $sqlinsert= "INSERT INTO `cart` (meal_id,customer_id,quantity,cash_amount,date_ordered,meal_price,meal_name,meal_image,status) VALUES ('$id','$customer_id','$quantity','$totalAmount','$currentDate','$price','$name','$image','cart')";
         $result= mysqli_query($con, $sqlinsert);
         if($result){
             header("location: ./menucustomer.php");

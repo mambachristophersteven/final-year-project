@@ -11,7 +11,7 @@ $currentTime = date('h:i:s');
 
 $currentDateTime = date('Y-m-d h:i:s'); 
 
-//echo $currentDateTime;
+// echo $currentDateTime;
 
 $username= $_SESSION['username'];
 $sql= "SELECT * FROM `users` WHERE username= '$username'";
@@ -47,12 +47,12 @@ $ingredient2=$rowview['ingredient2'];
 $ingredient3=$rowview['ingredient3'];
 $ingredient4=$rowview['ingredient4'];
 
-$sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id'";
+$sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id' AND status = 'cart'";
 $resultcart = mysqli_query($con,$sqlcart);
 $nummcart = mysqli_num_rows($resultcart);
 
 
-$sqltotal = "SELECT SUM(cash_amount) from `cart`";
+$sqltotal = "SELECT SUM(cash_amount) from `cart` WHERE customer_id = '$customer_id' AND status = 'cart'";
 $resulttotal = mysqli_query($con,$sqltotal);
 $sumcart = mysqli_fetch_assoc($resulttotal);
 
@@ -119,7 +119,7 @@ $sum = '¢'.$sumcart['SUM(cash_amount)'].'.00';
                 <div class="meals">
                     <?php 
                         include '../../connection.php';
-                        $sqlshow = "SELECT * FROM `cart` WHERE customer_id = '$customer_id' ORDER BY id DESC";
+                        $sqlshow = "SELECT * FROM `cart` WHERE customer_id = '$customer_id' AND status = 'cart' ORDER BY id DESC";
                         $resultshow = mysqli_query($con,$sqlshow);
                         //$numshow = mysqli_num_rows($resultshow);
                         if($resultshow){

@@ -6,20 +6,25 @@ if(!isset($_SESSION['username'])){
     header("location: ../index.php");
 }
 
-$currentDateTime = date('Y-m-d h:i:s'); 
-$currentTime = date('h:i:s'); 
-
-
 $customer_id = $_GET['removeid'];
 
-//$sqlupdate = "UPDATE `cart` SET order_time = '$currentDateTime' WHERE customer_id=$customer_id";
+$currentDateTime = date('h:i:s'); 
 
-$sql="UPDATE `cart` SET order_time = '$currentDateTime' WHERE customer_id=$customer_id";
+
+$sql="UPDATE `cart` SET order_time = '$currentDateTime' WHERE customer_id=$customer_id AND order_time IS NULL";
 $result=mysqli_query($con,$sql);
 if($result){
     //echo "deleted successfully";
-    header("location: ./orderplaced.php");
-    exit;
+    $sqlremove="UPDATE `cart` SET status = 'ordered' WHERE customer_id=$customer_id";
+    $resultremove=mysqli_query($con,$sqlremove);
+    if($resultremove){
+        //echo "deleted successfully";
+        header("location: ./orderplaced.php");
+        exit;
+    }
+    
 }
 
 ?>
+
+

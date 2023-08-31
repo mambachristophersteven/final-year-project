@@ -26,7 +26,7 @@ $resultmeals_on_menu = mysqli_query($con,$sqlmeals_on_menu);
 $numsmeals_on_menu = mysqli_num_rows($resultmeals_on_menu);
 $rowmeals_on_menu = mysqli_fetch_assoc($resultmeals_on_menu);
 
-$sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id'";
+$sqlcart ="SELECT * FROM `cart` WHERE customer_id = '$customer_id' AND status = 'cart'";
 $resultcart = mysqli_query($con,$sqlcart);
 $nummcart = mysqli_num_rows($resultcart);
 
