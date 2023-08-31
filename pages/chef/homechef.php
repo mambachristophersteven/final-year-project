@@ -13,6 +13,18 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
+// $sqlorder ="SELECT id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY order_time";
+// $resultorder= mysqli_query($con,$sqlorder);
+// $roworder= mysqli_fetch_assoc($resultorder);
+// if($resultorder){
+//     while($roworder = mysqli_fetch_assoc($resultorder)){
+//         //echo $roworder['id'].'<br> <br>';
+//         //echo $roworder['HowMany'].'<br>';
+//         //echo 'hello';
+//     }
+// }
+
+
 
 ?>
 
@@ -93,12 +105,29 @@ $position=$row['role'];
                 <p class="section-info">Total number of orders received and awaiting processing.</p>
             </div>
             <table>
-                <tr>
-                    <td><img src="../../assets/avatars/3.svg" alt="customer-avatar"></td>
-                    <td><p class="order-number">order #1</p></td>
-                    <td><p class="order-arrival">2:34pm</p></td>
-                    <td><button>view</button></td>
-                </tr>
+                <?php
+                    $sqlorder ="SELECT id, customer_id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
+                    $resultorder= mysqli_query($con,$sqlorder);
+                    $roworder= mysqli_fetch_assoc($resultorder);
+                    $number = 0;
+                    if($resultorder){
+                        while($roworder = mysqli_fetch_assoc($resultorder)){
+                            $number++;
+                            $time = $roworder['order_time'];
+                            echo "
+                                <tr>
+                                    <td><p class='order-number'>order #$number</p></td>
+                                    <td><p class='order-arrival'>$time</p></td>
+                                    <td><button>view</button></td>
+                                </tr>
+                            ";
+                        }
+                        
+                        
+                    }
+                
+                ?>
+                
             </table>
             <a href="#">Show all</a>
         </div>
@@ -139,7 +168,7 @@ $position=$row['role'];
                     <img src="../../assets/icons/active.svg" alt="current page">
                 </div>
                 <div class="icon">
-                    <a href="#"><img src="../../assets/icons/new.svg" alt="orders"></a>
+                    <a href="./orderschef.php"><img src="../../assets/icons/new.svg" alt="orders"></a>
                 </div>
                 <div class="icon">
                     <a href="#"><img src="../../assets/icons/pending.svg" alt="pending orders"></a>

@@ -65,15 +65,16 @@
 .box{
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.31);
-    background: #FFF;
+    background: #000;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 48%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
+    color: white;
 }
 
 .box .up{
@@ -91,7 +92,7 @@
 .box-name{
     font-family: poppinsSemiBold;
     font-size: 18px;
-    color: black;
+    color: white;
 }
 
 .summary{
@@ -131,102 +132,6 @@
     font-family: poppinsBold;
     font-size: 9px;
     color: rgba(102, 102, 102, 1);
-}
-
-table{
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.31);
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 10px;
-    text-align: center;
-}
-
-table img{
-    width: 30px;
-}
-
-table th{
-    padding: 2px;
-}
-
-table td{
-    border-bottom: 1px solid rgba(144, 144, 144, 1);
-    border-collapse: collapse;
-    padding: 2px;
-}
-
-table tr{
-    border-collapse: collapse;
-}
-
-tr:last-child td{
-    border: none;
-}
-
-.order-number{
-    font-family: poppinsSemiBold;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.65);
-}
-
-.order-arrival{
-    font-family: poppinsSemiBold;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.88);
-}
-
-table button{
-    padding: 5px;
-    color: black;
-    background: rgba(217, 217, 217, 1);
-    border-radius: 5px;
-    width: 60px;
-    font-family: poppinsSemiBold;
-    cursor: pointer;
-}
-
-.most-Ordered{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.most-Ordered table img{
-    width: 50px;
-}
-
-th{
-    font-family: poppinsBold;
-    font-size: 12px;
-    color: #202020;
-}
-
-.meal-name{
-    font-family: poppinsSemiBold;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.65);
-}
-
-.meal-price{
-    font-family: poppinsSemiBold;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.65);
-}
-
-.meal-orders{
-    font-family: poppinsSemiBold;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.65);
-}
-
-.most-Ordered a{
-    color: rgb(51, 51, 51);
-    font-family: poppinsSemiBold;
-    font-size: 12px;
 }
 
 .menubar{

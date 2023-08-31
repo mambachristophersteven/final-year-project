@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])){
 
 $customer_id = $_GET['removeid'];
 
-$currentDateTime = date('h:i:s'); 
+$currentDateTime = date('Y-m-d h:i:s'); 
 
 
 $sql="UPDATE `cart` SET order_time = '$currentDateTime' WHERE customer_id=$customer_id AND order_time IS NULL";

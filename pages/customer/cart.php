@@ -11,7 +11,7 @@ $currentTime = date('h:i:s');
 
 $currentDateTime = date('Y-m-d h:i:s'); 
 
-// echo $currentDateTime;
+//echo $currentTime;
 
 $username= $_SESSION['username'];
 $sql= "SELECT * FROM `users` WHERE username= '$username'";
