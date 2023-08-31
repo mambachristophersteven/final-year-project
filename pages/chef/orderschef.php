@@ -17,14 +17,8 @@ $sqlorder ="SELECT id, customer_id, order_time, COUNT(customer_id) AS HowMany FR
 $resultorder= mysqli_query($con,$sqlorder);
 $roworder= mysqli_fetch_assoc($resultorder);
 $numOfOrders= mysqli_num_rows($resultorder)-1;
-$numofOrders = $roworder['HowMany'];
-if($resultorder){
-    while($roworder = mysqli_fetch_assoc($resultorder)){
-        //echo $roworder['id'].'<br> <br>';
-        //echo $roworder['HowMany'].'<br>';
-        //echo 'hello';
-    }
-}
+//$numofOrders = $roworder['HowMany'];
+
 
 // $sqlorder ="SELECT id, customer_id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
 //                     $resultorder= mysqli_query($con,$sqlorder);
@@ -89,13 +83,22 @@ if($resultorder){
                 <p class="section-title">New orders list</p>
                 <p class="section-info">Total number of orders received and awaiting processing.</p>
             </div>
-            <table>
-                <?php
-                    
-                
-                ?>
-                
-            </table>
+            <div class="orders-boxes">
+                <div class="order-box">
+                    <div class="order-top">
+                        <p class="order-number">Order #2</p>
+                        <p class="order-time">2023-08-31 05:00:06</p>
+                    </div>
+                    <div class="order-meals">
+                        <img src="../../assets/meals/5.svg" alt="meal-image">
+                        <p class="meal-name">The hot kube</p>
+                        <div class="meal-quantity">
+                            <p class="price">¢40.00</p>
+                            <p class="quantity">Qty:2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="menubar">
             <div class="menu-icons">
