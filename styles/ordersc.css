@@ -105,7 +105,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
 }
 
@@ -132,6 +132,85 @@
     font-family: poppinsBold;
     font-size: 9px;
     color: rgba(102, 102, 102, 1);
+}
+
+.orders-boxes{
+    border: 2px solid red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.order-box{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.31);
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.order-top{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-number{
+    font-family: poppinsSemiBold;
+    font-size: 12px;
+    color: black;
+}
+
+.order-time{
+    font-family: poppinsSemiBold;
+    font-size: 10px;
+    color: rgba(186, 186, 186, 1);
+}
+
+.order-meals{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.order-meals >img{
+    width: 60px;
+}
+
+.meal-name{
+    font-family: poppinsSemiBold;
+    font-size: 14px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.meal-quantity{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.price{
+    font-family: poppinsSemiBold;
+    font-size: 12px;
+    color: black;
+    text-transform: capitalize;
+}
+
+.quantity{
+    font-family: poppinsSemiBold;
+    font-size: 12px;
+    color: black;
+    text-transform: capitalize;
 }
 
 .menubar{
