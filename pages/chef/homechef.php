@@ -13,16 +13,23 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
-// $sqlorder ="SELECT id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY order_time";
-// $resultorder= mysqli_query($con,$sqlorder);
-// $roworder= mysqli_fetch_assoc($resultorder);
-// if($resultorder){
-//     while($roworder = mysqli_fetch_assoc($resultorder)){
-//         //echo $roworder['id'].'<br> <br>';
-//         //echo $roworder['HowMany'].'<br>';
-//         //echo 'hello';
-//     }
-// }
+$sqlmeals = "SELECT * FROM `meals`";
+$resultmeals = mysqli_query($con,$sqlmeals);
+$numsmeals = mysqli_num_rows($resultmeals);
+$rowmeals = mysqli_fetch_assoc($resultmeals);
+
+$sqlorder ="SELECT id, customer_id, order_time, COUNT(customer_id) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
+$resultorder= mysqli_query($con,$sqlorder);
+$roworder= mysqli_fetch_assoc($resultorder);
+$numOfOrders= mysqli_num_rows($resultorder)-1;
+//$numofOrders = $roworder['HowMany'];
+if($resultorder){
+    while($roworder = mysqli_fetch_assoc($resultorder)){
+        //echo $roworder['id'].'<br> <br>';
+        //echo $roworder['HowMany'].'<br>';
+        //echo 'hello';
+    }
+}
 
 
 
@@ -52,7 +59,7 @@ $position=$row['role'];
         <div class="boxes">
             <div class="box">
                 <div class="up">
-                    <p class="number">120</p>
+                    <p class="number"><?php echo $numsmeals; ?></p>
                     <img src="../../assets/icons/current.svg" alt="current">
                 </div>
                 <div class="middle">
@@ -63,6 +70,18 @@ $position=$row['role'];
                 </div>
             </div>
             <div class="box">
+                <div class="up">
+                    <p class="number"><?php echo $numOfOrders; ?></p>
+                    <img src="../../assets/icons/newOrdersBlack.svg" alt="current">
+                </div>
+                <div class="middle">
+                    <p class="box-name">New Orders</p>
+                </div>
+                <div class="down">
+                    <p class="summary">Total number of food meals we have in our menu currently.</p>
+                </div>
+            </div>
+            <!-- <div class="box">
                 <div class="up">
                     <p class="number">120</p>
                     <img src="../../assets/icons/current.svg" alt="current">
@@ -85,19 +104,7 @@ $position=$row['role'];
                 <div class="down">
                     <p class="summary">Total number of food meals we have in our menu currently.</p>
                 </div>
-            </div>
-            <div class="box">
-                <div class="up">
-                    <p class="number">120</p>
-                    <img src="../../assets/icons/current.svg" alt="current">
-                </div>
-                <div class="middle">
-                    <p class="box-name">Current meals</p>
-                </div>
-                <div class="down">
-                    <p class="summary">Total number of food meals we have in our menu currently.</p>
-                </div>
-            </div>
+            </div> -->
         </div>
         <div class="new-Orders">
             <div class="heading">

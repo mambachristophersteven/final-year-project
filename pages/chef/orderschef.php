@@ -13,16 +13,18 @@ $nums= mysqli_num_rows($result);
 $row= mysqli_fetch_assoc($result);
 $position=$row['role'];
 
-// $sqlorder ="SELECT id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY order_time";
-// $resultorder= mysqli_query($con,$sqlorder);
-// $roworder= mysqli_fetch_assoc($resultorder);
-// if($resultorder){
-//     while($roworder = mysqli_fetch_assoc($resultorder)){
-//         //echo $roworder['id'].'<br> <br>';
-//         //echo $roworder['HowMany'].'<br>';
-//         //echo 'hello';
-//     }
-// }
+$sqlorder ="SELECT id, customer_id, order_time, COUNT(customer_id) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
+$resultorder= mysqli_query($con,$sqlorder);
+$roworder= mysqli_fetch_assoc($resultorder);
+$numOfOrders= mysqli_num_rows($resultorder)-1;
+$numofOrders = $roworder['HowMany'];
+if($resultorder){
+    while($roworder = mysqli_fetch_assoc($resultorder)){
+        //echo $roworder['id'].'<br> <br>';
+        //echo $roworder['HowMany'].'<br>';
+        //echo 'hello';
+    }
+}
 
 // $sqlorder ="SELECT id, customer_id, order_time, SUM(meal_price) AS HowMany FROM `cart` GROUP BY customer_id, order_time";
 //                     $resultorder= mysqli_query($con,$sqlorder);
@@ -71,7 +73,7 @@ $position=$row['role'];
         <div class="boxes">
             <div class="box">
                 <div class="up">
-                    <p class="number">120</p>
+                    <p class="number"><?php echo $numOfOrders?></p>
                     <img src="../../assets/icons/new.svg" alt="current">
                 </div>
                 <div class="middle">
@@ -94,7 +96,6 @@ $position=$row['role'];
                 ?>
                 
             </table>
-            <a href="#">Show all</a>
         </div>
         <div class="menubar">
             <div class="menu-icons">
