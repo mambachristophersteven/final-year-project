@@ -59,8 +59,7 @@ if(isset($_POST['submit'])){
         }
         else{
             die("error occurred: ".mysqli_error($con));
-        }
-        
+        }       
     }
             
     
@@ -140,7 +139,6 @@ if(isset($_POST['submit'])){
             </form>
         </div>       
     </div>
-
     <script src="../../interactivity/individualme.js"></script>
 </body>
 </html>
